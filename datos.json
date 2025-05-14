@@ -1,0 +1,922 @@
+[
+  {
+    "tipo": "reflexion",
+    "tema": "Amor",
+    "pregunta": "¿Qué significa amar como Jesús nos ama?",
+    "respuesta": "Amar con entrega y sin esperar",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Fe",
+    "pregunta": "¿Quién caminó sobre el agua hacia Jesús?",
+    "respuesta": "Pedro",
+    "opcion_1": "Juan",
+    "opcion_2": "Pablo",
+    "opcion_3": "Santiago",
+    "correcta": 1
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Gracia",
+    "pregunta": "¿Qué es la gracia según la Biblia?",
+    "respuesta": "Don inmerecido de Dios",
+    "opcion_1": "Buenas obras",
+    "opcion_2": "Salvación por ley",
+    "opcion_3": "Oración constante",
+    "correcta": 1
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Servicio",
+    "pregunta": "¿Cómo podemos servir en nuestra comunidad?",
+    "respuesta": "Participando activamente con amor",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Quién fue el líder de los israelitas durante el Éxodo?",
+    "respuesta": "",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Qué hizo Moisés con el Mar Rojo?",
+    "respuesta": "Moisés",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Cuál fue la señal de Dios para que Moisés dividiera el Mar Rojo?",
+    "respuesta": "Lo dividió para que los israelitas pudieran cruzar",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Quién fue el hermano de Moisés?",
+    "respuesta": "Levantó su bastón",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Qué nombre recibió el lugar donde Moisés recibió los Diez Mandamientos?",
+    "respuesta": "Aarón",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿En qué parte del desierto Moisés recibió las tablas de la ley?",
+    "respuesta": "Monte Sinaí",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Qué le dijo Dios a Moisés sobre la tierra prometida?",
+    "respuesta": "En el Monte Sinaí",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Qué plaga tocó Egipto primero?",
+    "respuesta": "Que Moisés no la vería",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Cuántos días estuvo Moisés en el Monte Sinaí?",
+    "respuesta": "Sangre",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Qué hizo Moisés para sacar agua de la roca?",
+    "respuesta": "40 días y 40 noches",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Quién le ayudó a Moisés a sostener sus manos durante la batalla contra Amalec?",
+    "respuesta": "Golpeó la roca con su bastón",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Qué animales cayeron como plaga sobre Egipto?",
+    "respuesta": "Aarón y Hur",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Qué hizo Moisés con el becerro de oro?",
+    "respuesta": "Ranas",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Cuántos mandamientos dio Dios a Moisés?",
+    "respuesta": "Lo destruyó",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Moisés",
+    "pregunta": "¿Quién sucedió a Moisés como líder de los israelitas?",
+    "respuesta": 10,
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Quién fue el líder de los israelitas durante el Éxodo?",
+    "respuesta": "",
+    "opcion_1": "David",
+    "opcion_2": "Elías",
+    "opcion_3": "Jacob",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Qué hizo Moisés con el Mar Rojo?",
+    "respuesta": "Moisés",
+    "opcion_1": "Lo cruzó caminando",
+    "opcion_2": "Lo calmó con su bastón",
+    "opcion_3": "Lo partió con una espada",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Cuál fue la señal de Dios para que Moisés dividiera el Mar Rojo?",
+    "respuesta": "Lo dividió para que los israelitas pudieran cruzar",
+    "opcion_1": "Rezó",
+    "opcion_2": "Golpeó el agua con una piedra",
+    "opcion_3": "Llamó al viento",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Quién fue el hermano de Moisés?",
+    "respuesta": "Levantó su bastón",
+    "opcion_1": "Josué",
+    "opcion_2": "Caleb",
+    "opcion_3": "Abraham",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Qué nombre recibió el lugar donde Moisés recibió los Diez Mandamientos?",
+    "respuesta": "Aarón",
+    "opcion_1": "Monte Nebo",
+    "opcion_2": "Monte Horeb",
+    "opcion_3": "Monte de los Olivos",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿En qué parte del desierto Moisés recibió las tablas de la ley?",
+    "respuesta": "Monte Sinaí",
+    "opcion_1": "En el Monte Nebo",
+    "opcion_2": "En la montaña de Horeb",
+    "opcion_3": "En el Monte Tabor",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Qué le dijo Dios a Moisés sobre la tierra prometida?",
+    "respuesta": "En el Monte Sinaí",
+    "opcion_1": "Que la vería desde lejos",
+    "opcion_2": "Que él sería el líder para conquistarla",
+    "opcion_3": "Que la dividiría entre las tribus",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Qué plaga tocó Egipto primero?",
+    "respuesta": "Que Moisés no la vería",
+    "opcion_1": "Ranas",
+    "opcion_2": "Mosquitos",
+    "opcion_3": "Langostas",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Cuántos días estuvo Moisés en el Monte Sinaí?",
+    "respuesta": "Sangre",
+    "opcion_1": "3 días",
+    "opcion_2": "7 días",
+    "opcion_3": "30 días",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Qué hizo Moisés para sacar agua de la roca?",
+    "respuesta": "40 días y 40 noches",
+    "opcion_1": "Rezó a Dios",
+    "opcion_2": "Hizo un milagro con su capa",
+    "opcion_3": "Llamó al viento",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Quién le ayudó a Moisés a sostener sus manos durante la batalla contra Amalec?",
+    "respuesta": "Golpeó la roca con su bastón",
+    "opcion_1": "Josué y Caleb",
+    "opcion_2": "El rey de Judá",
+    "opcion_3": "Caleb y Elías",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Qué animales cayeron como plaga sobre Egipto?",
+    "respuesta": "Aarón y Hur",
+    "opcion_1": "Ratones",
+    "opcion_2": "Langostas",
+    "opcion_3": "Ratas",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Qué hizo Moisés con el becerro de oro?",
+    "respuesta": "Ranas",
+    "opcion_1": "Lo adoró",
+    "opcion_2": "Lo guardó como símbolo",
+    "opcion_3": "Lo entregó a Aarón",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Cuántos mandamientos dio Dios a Moisés?",
+    "respuesta": "Lo destruyó",
+    "opcion_1": 12,
+    "opcion_2": 7,
+    "opcion_3": 15,
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Quién sucedió a Moisés como líder de los israelitas?",
+    "respuesta": 10,
+    "opcion_1": "Aarón",
+    "opcion_2": "Caleb",
+    "opcion_3": "Elías",
+    "correcta": 0
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Qué sacrificio le pidió Dios a Abraham?",
+    "respuesta": "Sacrificar a su hijo Isaac",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Qué hizo Abraham cuando Dios le pidió que sacrificara a su hijo?",
+    "respuesta": "Obedeció",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Quién fue el padre de Isaac?",
+    "respuesta": "Abraham",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Cuál fue el pacto que Dios hizo con Abraham?",
+    "respuesta": "Sería el padre de una gran nación",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Quién fue la esposa de Abraham?",
+    "respuesta": "Sara",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Qué ciudad fue destruida por la maldad de sus habitantes",
+    "respuesta": "en tiempos de Abraham?",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Cuál fue el nombre del sobrino de Abraham que lo acompañó a la tierra prometida?",
+    "respuesta": "Lot",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Qué ofreció Abraham cuando se encontró con Melquisedec?",
+    "respuesta": "Pan y vino",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Cuántos hijos tuvo Abraham?",
+    "respuesta": 2,
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Qué nombre dio Dios a la esposa de Abraham?",
+    "respuesta": "Sara",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Qué edad tenía Abraham cuando nació Isaac?",
+    "respuesta": "100 años",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Dónde le pidió Dios que sacrificara a su hijo?",
+    "respuesta": "En el monte Moriah",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Cuántos años vivió Abraham?",
+    "respuesta": "175 años",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Qué hizo Abraham cuando Dios le dijo que destruyera Sodoma y Gomorra?",
+    "respuesta": "Rogó por la ciudad",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Abraham",
+    "pregunta": "¿Qué hizo Abraham cuando conoció que Dios destruiría a Sodoma y Gomorra?",
+    "respuesta": "Intercedió por la ciudad",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Qué ciudad fue destruida por Dios por su maldad según el relato de Jonás?",
+    "respuesta": "Nínive",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Cuánto tiempo estuvo Jonás dentro del gran pez?",
+    "respuesta": "Tres días y tres noches",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿A qué ciudad se dirigía Jonás cuando fue tragado por el pez?",
+    "respuesta": "Nínive",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Por qué Jonás huyó de la misión que Dios le dio?",
+    "respuesta": "No quería que los habitantes de Nínive se arrepintieran",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Qué mensaje predicó Jonás en Nínive?",
+    "respuesta": "Arrepentíos de vuestros pecados",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Quién fue el rey de Nínive cuando Jonás les predicó el arrepentimiento?",
+    "respuesta": "El rey de Nínive",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Cuál fue la reacción del pueblo de Nínive ante el mensaje de Jonás?",
+    "respuesta": "Se arrepintieron y se vistieron de saco",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Qué le pasó a Jonás cuando huyó de la misión?",
+    "respuesta": "Fue tragado por un pez",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Cómo terminó la historia de Jonás?",
+    "respuesta": "La ciudad se arrepintió y fue perdonada",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Qué le dijo Dios a Jonás después de que la ciudad se arrepintió?",
+    "respuesta": "Que se alegrara por su arrepentimiento",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Cuál fue el nombre del gran pez que tragó a Jonás?",
+    "respuesta": "No se menciona el nombre",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Qué le pidió Jonás a Dios cuando estuvo dentro del pez?",
+    "respuesta": "Que lo salvara",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Por qué Jonás no quería ir a Nínive?",
+    "respuesta": "Porque pensaba que no cambiarían",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Qué hizo Jonás después de que el pez lo vomitó?",
+    "respuesta": "Fue a Nínive a predicar",
+    "opcion_1": "",
+    "opcion_2": "",
+    "opcion_3": "",
+    "correcta": ""
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Qué sacrificio le pidió Dios a Abraham?",
+    "respuesta": "Sacrificar a su hijo Isaac",
+    "opcion_1": "Sacrificar un cordero",
+    "opcion_2": "Sacrificar su riqueza",
+    "opcion_3": "Sacrificar a Lot",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Qué hizo Abraham cuando Dios le pidió que sacrificara a su hijo?",
+    "respuesta": "Obedeció",
+    "opcion_1": "Se negó",
+    "opcion_2": "Ofreció un cordero en lugar de su hijo",
+    "opcion_3": "Fue a ver a un sacerdote para consultar",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Quién fue el padre de Isaac?",
+    "respuesta": "Abraham",
+    "opcion_1": "Jacob",
+    "opcion_2": "Moisés",
+    "opcion_3": "David",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Cuál fue el pacto que Dios hizo con Abraham?",
+    "respuesta": "Sería el padre de una gran nación",
+    "opcion_1": "Sería el rey de Israel",
+    "opcion_2": "Tendría riquezas sin fin",
+    "opcion_3": "Su descendencia gobernaría el mundo",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Quién fue la esposa de Abraham?",
+    "respuesta": "Sara",
+    "opcion_1": "Rebeca",
+    "opcion_2": "Lea",
+    "opcion_3": "Raquel",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Qué ciudad fue destruida por la maldad de sus habitantes",
+    "respuesta": "en tiempos de Abraham?",
+    "opcion_1": "Sodoma",
+    "opcion_2": "Nínive",
+    "opcion_3": "Jericó",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Cuál fue el nombre del sobrino de Abraham que lo acompañó a la tierra prometida?",
+    "respuesta": "Lot",
+    "opcion_1": "Eliezer",
+    "opcion_2": "Isaac",
+    "opcion_3": "Jacob",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Qué ofreció Abraham cuando se encontró con Melquisedec?",
+    "respuesta": "Pan y vino",
+    "opcion_1": "Un sacrificio de cordero",
+    "opcion_2": "Un becerro",
+    "opcion_3": "Un sacrificio de cabra",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Cuántos hijos tuvo Abraham?",
+    "respuesta": 2,
+    "opcion_1": 3,
+    "opcion_2": 4,
+    "opcion_3": 5,
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Qué nombre dio Dios a la esposa de Abraham?",
+    "respuesta": "Sara",
+    "opcion_1": "Rebeca",
+    "opcion_2": "Lea",
+    "opcion_3": "Raquel",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Qué edad tenía Abraham cuando nació Isaac?",
+    "respuesta": "100 años",
+    "opcion_1": "80 años",
+    "opcion_2": "90 años",
+    "opcion_3": "120 años",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Dónde le pidió Dios que sacrificara a su hijo?",
+    "respuesta": "En el monte Moriah",
+    "opcion_1": "En el monte Sinaí",
+    "opcion_2": "En el desierto de Paran",
+    "opcion_3": "En la ciudad de Betel",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Cuántos años vivió Abraham?",
+    "respuesta": "175 años",
+    "opcion_1": "120 años",
+    "opcion_2": "150 años",
+    "opcion_3": "200 años",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Qué hizo Abraham cuando Dios le dijo que destruyera Sodoma y Gomorra?",
+    "respuesta": "Rogó por la ciudad",
+    "opcion_1": "Fue a destruirla",
+    "opcion_2": "Se alejó del lugar",
+    "opcion_3": "Buscó refugio",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Abraham",
+    "pregunta": "¿Qué hizo Abraham cuando conoció que Dios destruiría a Sodoma y Gomorra?",
+    "respuesta": "Intercedió por la ciudad",
+    "opcion_1": "Escapó con su familia",
+    "opcion_2": "Se fue a otra ciudad",
+    "opcion_3": "No hizo nada",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Qué ciudad fue destruida por Dios por su maldad según el relato de Jonás?",
+    "respuesta": "Nínive",
+    "opcion_1": "Sodoma",
+    "opcion_2": "Jerusalén",
+    "opcion_3": "Jericó",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Cuánto tiempo estuvo Jonás dentro del gran pez?",
+    "respuesta": "Tres días y tres noches",
+    "opcion_1": "Un día y una noche",
+    "opcion_2": "Cinco días y cinco noches",
+    "opcion_3": "Cuatro días",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿A qué ciudad se dirigía Jonás cuando fue tragado por el pez?",
+    "respuesta": "Nínive",
+    "opcion_1": "Tarshis",
+    "opcion_2": "Jerusalén",
+    "opcion_3": "Egipto",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Por qué Jonás huyó de la misión que Dios le dio?",
+    "respuesta": "No quería que los habitantes de Nínive se arrepintieran",
+    "opcion_1": "No quería ir tan lejos",
+    "opcion_2": "No tenía dinero para viajar",
+    "opcion_3": "Pensaba que no sería capaz",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Qué mensaje predicó Jonás en Nínive?",
+    "respuesta": "Arrepentíos de vuestros pecados",
+    "opcion_1": "Construid un templo para Dios",
+    "opcion_2": "Ayunad y orad tres días",
+    "opcion_3": "Regresad a vuestros hogares",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Quién fue el rey de Nínive cuando Jonás les predicó el arrepentimiento?",
+    "respuesta": "El rey de Nínive",
+    "opcion_1": "Nabucodonosor",
+    "opcion_2": "Ciro",
+    "opcion_3": "Darío",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Cuál fue la reacción del pueblo de Nínive ante el mensaje de Jonás?",
+    "respuesta": "Se arrepintieron y se vistieron de saco",
+    "opcion_1": "Se rieron y desobedecieron",
+    "opcion_2": "Se unieron a Jonás en su viaje",
+    "opcion_3": "Apedrearon a Jonás",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Qué le pasó a Jonás cuando huyó de la misión?",
+    "respuesta": "Fue tragado por un pez",
+    "opcion_1": "Se perdió en el desierto",
+    "opcion_2": "Fue arrestado",
+    "opcion_3": "Fue derrotado por un ejército",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Cómo terminó la historia de Jonás?",
+    "respuesta": "La ciudad se arrepintió y fue perdonada",
+    "opcion_1": "La ciudad fue destruida",
+    "opcion_2": "Jonás murió dentro del pez",
+    "opcion_3": "Jonás fue condenado a vivir con el pez",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Qué le dijo Dios a Jonás después de que la ciudad se arrepintió?",
+    "respuesta": "Que se alegrara por su arrepentimiento",
+    "opcion_1": "Que continuara predicando en otras ciudades",
+    "opcion_2": "Que lo castigara",
+    "opcion_3": "Que la ciudad no sería destruida",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Cuál fue el nombre del gran pez que tragó a Jonás?",
+    "respuesta": "No se menciona el nombre",
+    "opcion_1": "Ballena",
+    "opcion_2": "Tiburón",
+    "opcion_3": "Delfín",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Qué le pidió Jonás a Dios cuando estuvo dentro del pez?",
+    "respuesta": "Que lo salvara",
+    "opcion_1": "Que lo castigara",
+    "opcion_2": "Que lo dejara morir",
+    "opcion_3": "Que le diera fuerzas",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Por qué Jonás no quería ir a Nínive?",
+    "respuesta": "Porque pensaba que no cambiarían",
+    "opcion_1": "Porque odiaba a los habitantes",
+    "opcion_2": "Porque tenía miedo",
+    "opcion_3": "Porque ya había predicado antes",
+    "correcta": 0
+  },
+  {
+    "tipo": "quiz",
+    "tema": "Jonás",
+    "pregunta": "¿Qué hizo Jonás después de que el pez lo vomitó?",
+    "respuesta": "Fue a Nínive a predicar",
+    "opcion_1": "Se quedó en la playa",
+    "opcion_2": "Regresó a Jerusalén",
+    "opcion_3": "Se fue a otro lugar",
+    "correcta": 0
+  }
+]
