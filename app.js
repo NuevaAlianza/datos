@@ -22,6 +22,10 @@ fetch('datos.json')
   .then(res => res.json())
   .then(data => {
     preguntas = data;
+
+    // Vaciar opciones previas si se reinicia
+    temaSelect.innerHTML = '<option value="">-- Selecciona tema --</option>';
+
     const temasUnicos = [...new Set(preguntas.map(p => p.tema))];
     temasUnicos.forEach(t => {
       const opt = document.createElement('option');
@@ -29,10 +33,15 @@ fetch('datos.json')
       opt.textContent = t;
       temaSelect.appendChild(opt);
     });
+
+    // Habilitar el select si estaba deshabilitado
+    temaSelect.disabled = false;
   })
   .catch(err => {
     console.error('Error cargando preguntas:', err);
+    alert('No se pudieron cargar las preguntas.');
   });
+
 
 iniciarBtn.addEventListener('click', () => {
   tipoSeleccionado = tipoSelect.value;
