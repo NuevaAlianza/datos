@@ -1,74 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Preguntas por Tema y Tipo - Quiz Comentado</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #fff7e6;
-    color: #333;
-    margin: 0; padding: 20px;
-  }
-  select, button {
-    padding: 10px;
-    font-size: 1rem;
-    margin: 5px 0;
-  }
-  #preguntaContainer {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  #opcionesContainer button {
-    display: block;
-    margin: 8px 0;
-    width: 100%;
-    text-align: left;
-    border: none;
-    background: #f0c987;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-  }
-  #opcionesContainer button:hover:not(:disabled) {
-    background-color: #f7d68e;
-  }
-  #opcionesContainer button:disabled {
-    cursor: default;
-  }
-  .green {
-    background-color: #4caf50 !important;
-    color: white;
-  }
-  .red {
-    background-color: #f44336 !important;
-    color: white;
-  }
-  #respuestaContainer {
-    margin-top: 15px;
-    font-size: 1rem;
-    padding: 12px;
-    border-radius: 6px;
-    background-color: #ffe9b3;
-    display: none;
-  }
-  #respuestaContainer.visible {
-    display: block;
-  }
-  #siguienteBtn, #mostrarRespuestaBtn, #reiniciarBtn {
-    margin-top: 20px;
-  }
-  #mensajeFinal {
-    margin-top: 20px;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  .oculto {
-    display: none !important;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preguntas por Tema y Tipo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff7e6;
+      color: #333;
+      margin: 0; padding: 20px;
+    }
+    select, button {
+      padding: 10px;
+      font-size: 1rem;
+      margin: 5px 0;
+    }
+    #preguntaContainer {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    #opcionesContainer button {
+      display: block;
+      margin: 8px 0;
+      width: 100%;
+      text-align: left;
+      border: none;
+      background: #f0c987;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    #opcionesContainer button:hover:not(:disabled) {
+      background-color: #f7d68e;
+    }
+    #opcionesContainer button:disabled {
+      cursor: default;
+    }
+    .green {
+      background-color: #4caf50 !important;
+      color: white;
+    }
+    .red {
+      background-color: #f44336 !important;
+      color: white;
+    }
+    #respuestaContainer {
+      margin-top: 15px;
+      font-size: 1rem;
+      padding: 12px;
+      border-radius: 6px;
+      background-color: #ffe9b3;
+      display: none;
+    }
+    #respuestaContainer.visible {
+      display: block;
+    }
+    #siguienteBtn, #mostrarRespuestaBtn, #reiniciarBtn {
+      margin-top: 20px;
+    }
+    #mensajeFinal {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -91,7 +88,6 @@
 
 <div id="preguntaContainer"></div>
 <div id="opcionesContainer"></div>
-
 <div id="respuestaContainer"></div>
 
 <button id="mostrarRespuestaBtn" class="oculto">Mostrar Respuesta</button>
@@ -101,42 +97,41 @@
 <div id="mensajeFinal"></div>
 
 <script>
+// Fragmento de datos de ejemplo
 const datos = [
   {
-    tema: "Fe",
-    tipo: "quiz_comentado",
-    pregunta: "¿Qué significa tener fe?",
-    opciones: ["Confiar en Dios", "Tener dinero", "Ser famoso"],
-    respuesta: "Confiar en Dios",
-    "cita biblica": "Hebreos 11:1"
+    "tipo": "Quiz Comentado",
+    "tema": "Noé",
+    "pregunta": "¿Cuántos días duró el diluvio?",
+    "respuesta": "40 días y 40 noches.",
+    "opcion_1": "7 días",
+    "opcion_2": "100 días",
+    "opcion_3": "12 días",
+    "correcta": 0,
+    "cita biblica": "Génesis 7:12"
   },
   {
-    tema: "Fe",
-    tipo: "quiz",
-    pregunta: "¿Quién es el autor de la fe?",
-    opciones: ["Dios", "Jesús", "El Espíritu Santo"],
-    respuesta: "Dios",
-    "cita biblica": "Hebreos 12:2"
+    "tipo": "reflexion",
+    "tema": "Jonás",
+    "pregunta": "¿Qué le pasó a Jonás cuando huyó de la misión?",
+    "respuesta": "Fue tragado por un pez",
+    "cita biblica": ""
   },
   {
-    tema: "Amor",
-    tipo: "reflexion",
-    pregunta: "¿Cómo podemos mostrar el amor de Dios en la vida diaria?",
-    respuesta: "Amando a nuestro prójimo como a nosotros mismos.",
-    "cita biblica": "1 Juan 4:7"
-  },
-  {
-    tema: "Esperanza",
-    tipo: "quiz_comentado",
-    pregunta: "¿Qué nos da esperanza en tiempos difíciles?",
-    opciones: ["La fe en Dios", "La suerte", "El dinero"],
-    respuesta: "La fe en Dios",
-    "cita biblica": "Romanos 15:13"
+    "tipo": "quiz",
+    "tema": "Moisés",
+    "pregunta": "¿Qué hizo Moisés para sacar agua de la roca?",
+    "respuesta": "Golpeó la roca con su bastón",
+    "opcion_1": "Rezó a Dios",
+    "opcion_2": "Hizo un milagro con su capa",
+    "opcion_3": "Llamó al viento",
+    "correcta": 0,
+    "cita biblica": ""
   }
 ];
 
-const temaSelect = document.getElementById('temaSelect');
 const tipoSelect = document.getElementById('tipoSelect');
+const temaSelect = document.getElementById('temaSelect');
 const iniciarBtn = document.getElementById('iniciarBtn');
 const preguntaContainer = document.getElementById('preguntaContainer');
 const opcionesContainer = document.getElementById('opcionesContainer');
@@ -150,16 +145,15 @@ let preguntasFiltradas = [];
 let indiceActual = 0;
 let puntaje = 0;
 
+function normalizarTipo(tipo) {
+  return tipo.toLowerCase().replace(/\s+/g, '_');
+}
+
 function actualizarTemasPorTipo() {
-  const tipo = tipoSelect.value;
-  let temasFiltrados;
-  if (!tipo) {
-    temasFiltrados = [...new Set(datos.map(d => d.tema))];
-  } else {
-    temasFiltrados = [...new Set(datos.filter(d => d.tipo === tipo).map(d => d.tema))];
-  }
   temaSelect.innerHTML = '<option value="">-- Selecciona tema --</option>';
-  temasFiltrados.forEach(t => {
+  const tipo = normalizarTipo(tipoSelect.value);
+  const temas = [...new Set(datos.filter(d => normalizarTipo(d.tipo) === tipo).map(d => d.tema))];
+  temas.forEach(t => {
     const option = document.createElement('option');
     option.value = t;
     option.textContent = t;
@@ -167,20 +161,17 @@ function actualizarTemasPorTipo() {
   });
 }
 
-tipoSelect.addEventListener('change', () => {
-  actualizarTemasPorTipo();
-  temaSelect.value = '';
-});
+tipoSelect.addEventListener('change', actualizarTemasPorTipo);
 
 function iniciar() {
   const tema = temaSelect.value;
-  const tipo = tipoSelect.value;
+  const tipo = normalizarTipo(tipoSelect.value);
   if (!tema || !tipo) {
     alert('Por favor, selecciona tema y tipo.');
     return;
   }
 
-  preguntasFiltradas = datos.filter(d => d.tema === tema && d.tipo === tipo);
+  preguntasFiltradas = datos.filter(d => d.tema === tema && normalizarTipo(d.tipo) === tipo);
   if (preguntasFiltradas.length === 0) {
     alert('No hay preguntas para esa combinación.');
     return;
@@ -201,62 +192,52 @@ function iniciar() {
 }
 
 function mostrarPregunta() {
+  const actual = preguntasFiltradas[indiceActual];
+  const tipo = normalizarTipo(tipoSelect.value);
+
+  preguntaContainer.textContent = actual.pregunta;
+  opcionesContainer.innerHTML = '';
   respuestaContainer.classList.remove('visible');
   respuestaContainer.innerHTML = '';
   siguienteBtn.classList.add('oculto');
   mostrarRespuestaBtn.classList.add('oculto');
-  opcionesContainer.innerHTML = '';
-
-  const actual = preguntasFiltradas[indiceActual];
-  preguntaContainer.textContent = actual.pregunta;
-
-  const tipo = tipoSelect.value;
 
   if (tipo === 'reflexion') {
-    // Solo mostrar la pregunta
     mostrarRespuestaBtn.classList.remove('oculto');
   } else if (tipo === 'quiz' || tipo === 'quiz_comentado') {
-    actual.opciones.forEach(op => {
+    const opciones = [actual.opcion_1, actual.opcion_2, actual.opcion_3];
+    opciones.forEach((op, i) => {
       const btn = document.createElement('button');
       btn.textContent = op;
       btn.onclick = () => {
         if (opcionesContainer.querySelector('button[disabled]')) return;
 
-        if (op === actual.respuesta) {
+        if (i === actual.correcta) {
           btn.classList.add('green');
           puntaje++;
         } else {
           btn.classList.add('red');
-          Array.from(opcionesContainer.children).forEach(b => {
-            if (b.textContent === actual.respuesta) {
-              b.classList.add('green');
-            }
-          });
+          opcionesContainer.children[actual.correcta]?.classList.add('green');
         }
+
+        Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
 
         if (tipo === 'quiz_comentado') {
           respuestaContainer.innerHTML = `<strong>Respuesta correcta:</strong> ${actual.respuesta}<br><em>${actual["cita biblica"] || ''}</em>`;
           respuestaContainer.classList.add('visible');
         }
 
-        Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
-
         siguienteBtn.classList.remove('oculto');
-        mostrarRespuestaBtn.classList.toggle('oculto', tipo === 'quiz_comentado');
       };
       opcionesContainer.appendChild(btn);
     });
   }
 }
 
-iniciarBtn.addEventListener('click', () => {
-  iniciar();
-});
+iniciarBtn.addEventListener('click', iniciar);
 
 siguienteBtn.addEventListener('click', () => {
   indiceActual++;
-  respuestaContainer.classList.remove('visible');
-  respuestaContainer.innerHTML = '';
   if (indiceActual >= preguntasFiltradas.length) {
     mostrarResultados();
   } else {
@@ -286,9 +267,6 @@ reiniciarBtn.addEventListener('click', () => {
   respuestaContainer.classList.remove('visible');
   mostrarRespuestaBtn.classList.add('oculto');
   siguienteBtn.classList.add('oculto');
-  tipoSelect.value = '';
-  actualizarTemasPorTipo();
-  temaSelect.value = '';
 });
 
 function mostrarResultados() {
@@ -304,10 +282,6 @@ function mostrarResultados() {
 
   reiniciarBtn.classList.remove('oculto');
 }
-
-// Al cargar, inicializar temas con todos los temas disponibles
-actualizarTemasPorTipo();
-
 </script>
 
 </body>
