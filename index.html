@@ -66,7 +66,7 @@
     font-size: 1.2rem;
   }
   .oculto {
-    display: none;
+    display: none !important;
   }
 </style>
 </head>
@@ -74,17 +74,17 @@
 
 <h1>Preguntas por Tema y Tipo</h1>
 
-<label for="temaSelect">Selecciona Tema:</label>
-<select id="temaSelect">
-  <option value="">-- Selecciona tema --</option>
-</select>
-
 <label for="tipoSelect">Selecciona Tipo:</label>
 <select id="tipoSelect">
   <option value="">-- Selecciona tipo --</option>
   <option value="reflexion">Reflexión</option>
   <option value="quiz">Quiz</option>
-  <option value="quiz_comentado">Quiz Comentado</option> <!-- NUEVO -->
+  <option value="quiz_comentado">Quiz Comentado</option>
+</select>
+
+<label for="temaSelect">Selecciona Tema:</label>
+<select id="temaSelect">
+  <option value="">-- Selecciona tema --</option>
 </select>
 
 <button id="iniciarBtn">Iniciar</button>
@@ -124,6 +124,14 @@ const datos = [
     pregunta: "¿Cómo podemos mostrar el amor de Dios en la vida diaria?",
     respuesta: "Amando a nuestro prójimo como a nosotros mismos.",
     "cita biblica": "1 Juan 4:7"
+  },
+  {
+    tema: "Esperanza",
+    tipo: "quiz_comentado",
+    pregunta: "¿Qué nos da esperanza en tiempos difíciles?",
+    opciones: ["La fe en Dios", "La suerte", "El dinero"],
+    respuesta: "La fe en Dios",
+    "cita biblica": "Romanos 15:13"
   }
 ];
 
@@ -142,9 +150,16 @@ let preguntasFiltradas = [];
 let indiceActual = 0;
 let puntaje = 0;
 
-function llenarTemas() {
-  const temas = [...new Set(datos.map(d => d.tema))];
-  temas.forEach(t => {
+function actualizarTemasPorTipo() {
+  const tipo = tipoSelect.value;
+  let temasFiltrados;
+  if (!tipo) {
+    temasFiltrados = [...new Set(datos.map(d => d.tema))];
+  } else {
+    temasFiltrados = [...new Set(datos.filter(d => d.tipo === tipo).map(d => d.tema))];
+  }
+  temaSelect.innerHTML = '<option value="">-- Selecciona tema --</option>';
+  temasFiltrados.forEach(t => {
     const option = document.createElement('option');
     option.value = t;
     option.textContent = t;
@@ -152,7 +167,10 @@ function llenarTemas() {
   });
 }
 
-llenarTemas();
+tipoSelect.addEventListener('change', () => {
+  actualizarTemasPorTipo();
+  temaSelect.value = '';
+});
 
 function iniciar() {
   const tema = temaSelect.value;
@@ -196,15 +214,12 @@ function mostrarPregunta() {
 
   if (tipo === 'reflexion') {
     // Solo mostrar la pregunta
-    // Se puede mostrar la respuesta al botón "Mostrar Respuesta"
     mostrarRespuestaBtn.classList.remove('oculto');
   } else if (tipo === 'quiz' || tipo === 'quiz_comentado') {
-    // Mostrar opciones como botones
     actual.opciones.forEach(op => {
       const btn = document.createElement('button');
       btn.textContent = op;
       btn.onclick = () => {
-        // Evitar múltiples clics
         if (opcionesContainer.querySelector('button[disabled]')) return;
 
         if (op === actual.respuesta) {
@@ -212,7 +227,6 @@ function mostrarPregunta() {
           puntaje++;
         } else {
           btn.classList.add('red');
-          // Marcar correcta
           Array.from(opcionesContainer.children).forEach(b => {
             if (b.textContent === actual.respuesta) {
               b.classList.add('green');
@@ -220,16 +234,13 @@ function mostrarPregunta() {
           });
         }
 
-        // Para quiz_comentado, mostrar respuesta y cita inmediatamente
         if (tipo === 'quiz_comentado') {
           respuestaContainer.innerHTML = `<strong>Respuesta correcta:</strong> ${actual.respuesta}<br><em>${actual["cita biblica"] || ''}</em>`;
           respuestaContainer.classList.add('visible');
         }
 
-        // Deshabilitar botones
         Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
 
-        // Mostrar botones siguiente y ocultar mostrarRespuestaBtn en quiz_comentado
         siguienteBtn.classList.remove('oculto');
         mostrarRespuestaBtn.classList.toggle('oculto', tipo === 'quiz_comentado');
       };
@@ -275,6 +286,9 @@ reiniciarBtn.addEventListener('click', () => {
   respuestaContainer.classList.remove('visible');
   mostrarRespuestaBtn.classList.add('oculto');
   siguienteBtn.classList.add('oculto');
+  tipoSelect.value = '';
+  actualizarTemasPorTipo();
+  temaSelect.value = '';
 });
 
 function mostrarResultados() {
@@ -290,6 +304,10 @@ function mostrarResultados() {
 
   reiniciarBtn.classList.remove('oculto');
 }
+
+// Al cargar, inicializar temas con todos los temas disponibles
+actualizarTemasPorTipo();
+
 </script>
 
 </body>
