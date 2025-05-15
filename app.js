@@ -15,7 +15,7 @@ const siguienteBtn = document.getElementById('siguienteBtn');
 const resultadoContainer = document.getElementById('resultado-container');
 const timerBar = document.getElementById('timer');
 
-fetch('preguntas.json')
+fetch('datos.json')
   .then(res => res.json())
   .then(data => {
     preguntas = data;
