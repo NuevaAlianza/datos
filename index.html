@@ -9,16 +9,17 @@
 <body>
   <div class="container">
     <h1>Preguntas por Tema</h1>
-
     <div id="seleccion">
-      <label for="tema">Selecciona un tema:</label>
-      <select id="temaSelect"></select>
-
-      <label for="tipo">Selecciona un tipo:</label>
+      <label for="tipo">Selecciona el tipo:</label>
       <select id="tipoSelect">
-        <option value="">-- Tipo --</option>
+        <option value="">-- Selecciona --</option>
         <option value="reflexion">Reflexión</option>
         <option value="quiz">Quiz</option>
+      </select>
+
+      <label for="tema">Selecciona un tema:</label>
+      <select id="temaSelect">
+        <option value="">-- Selecciona --</option>
       </select>
 
       <button id="iniciarBtn">Iniciar</button>
@@ -27,13 +28,16 @@
     <div id="contenido" class="oculto">
       <div id="pregunta-container"></div>
       <div id="opciones-container" class="opciones"></div>
-      <div id="timer" class="barra-tiempo"></div>
+      <div id="timer"></div>
       <div id="respuesta-container" class="oculto"></div>
       <button id="mostrarRespuestaBtn" class="oculto">Mostrar Respuesta</button>
       <button id="siguienteBtn" class="oculto">Siguiente</button>
     </div>
 
-    <div id="resultado-container" class="oculto"></div>
+    <div id="resultado-container" class="oculto">
+      <p id="resultadoTexto"></p>
+      <button id="reiniciarBtn">Reiniciar</button>
+    </div>
   </div>
 
   <script src="app.js"></script>
