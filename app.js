@@ -108,6 +108,7 @@ function mostrarPregunta() {
       btn.textContent = op.text;
       btn.onclick = () => {
         clickSound.play();
+        clearInterval(timerInterval);
 
         if (op.index === actual.correcta) {
           btn.style.background = 'green';
@@ -132,7 +133,6 @@ function mostrarPregunta() {
 
         siguienteBtn.classList.remove('oculto');
         siguienteBtn.classList.add('fade-in');
-        clearInterval(timerInterval);
         timerBar.classList.add('oculto');
       };
       opcionesContainer.appendChild(btn);
@@ -141,12 +141,15 @@ function mostrarPregunta() {
     preguntaContainer.classList.add('fade-in');
     opcionesContainer.classList.add('fade-in');
 
+    iniciarTemporizador();
+
   } else if (tipoSeleccionado === 'reflexion') {
     opcionesContainer.classList.add('oculto');
     respuestaContainer.textContent = actual.respuesta;
     mostrarRespuestaBtn.classList.remove('oculto');
     mostrarRespuestaBtn.classList.add('fade-in');
     preguntaContainer.classList.add('fade-in');
+
     iniciarTemporizador();
   }
 }
@@ -176,10 +179,27 @@ function iniciarTemporizador() {
 
     if (duracion <= 0) {
       clearInterval(timerInterval);
-      mostrarRespuestaBtn.classList.remove('oculto');
-      mostrarRespuestaBtn.classList.add('fade-in');
-      siguienteBtn.classList.remove('oculto');
-      siguienteBtn.classList.add('fade-in');
+      if (tipoSeleccionado === 'reflexion') {
+        mostrarRespuestaBtn.classList.remove('oculto');
+        mostrarRespuestaBtn.classList.add('fade-in');
+      } else {
+        // Deshabilitar opciones y mostrar correcta
+        Array.from(opcionesContainer.children).forEach(btn => btn.disabled = true);
+        // Resaltar opción correcta en verde
+        Array.from(opcionesContainer.children).forEach(btn => {
+          if (btn.textContent === preguntasFiltradas[indice].respuesta) {
+            btn.style.background = 'green';
+          }
+        });
+        // Mostrar cita bíblica si es quiz comentado
+        if (tipoSeleccionado === 'quiz comentado') {
+          respuestaContainer.textContent = preguntasFiltradas[indice]['cita biblica'] || 'Sin comentario adicional.';
+          respuestaContainer.classList.remove('oculto');
+          respuestaContainer.classList.add('fade-in');
+        }
+        siguienteBtn.classList.remove('oculto');
+        siguienteBtn.classList.add('fade-in');
+      }
       timerBar.classList.remove('pulse-red');
       timerBar.classList.add('fade-out');
     }
@@ -188,6 +208,7 @@ function iniciarTemporizador() {
 
 mostrarRespuestaBtn.addEventListener('click', () => {
   clickSound.play();
+  clearInterval(timerInterval);
   respuestaContainer.classList.remove('oculto');
   respuestaContainer.classList.add('fade-in');
   mostrarRespuestaBtn.classList.add('oculto');
@@ -225,29 +246,18 @@ function mostrarResultado() {
     let mensaje = '';
 
     if (porcentaje <= 75) {
-      mensaje = 'Sigamos creciendo juntos. Compartiendo más en comunidad, seremos mejores.';
-    } else if (porcentaje <= 87) {
-      mensaje = '¡Estás encaminado! Tu conocimiento es bueno y puede inspirar a otros.';
+      mensaje = 'Puedes mejorar, ¡ánimo!';
+    } else if (porcentaje > 75 && porcentaje < 95) {
+      mensaje = 'Muy bien, sigue así.';
     } else {
-      mensaje = '¡Eres un iluminado de la Palabra! Sigue brillando y guiando con sabiduría.';
+      mensaje = 'Excelente, ¡felicidades!';
     }
 
     resultadoContainer.innerHTML = `
-      <h2>Completado</h2>
-      <p>Puntaje: ${puntaje} / ${preguntasFiltradas.length} (${porcentaje.toFixed(1)}%)</p>
-      <p><strong>${mensaje}</strong></p>
+      <h3>Tu puntaje: ${puntaje} / ${preguntasFiltradas.length} (${porcentaje.toFixed(2)}%)</h3>
+      <p>${mensaje}</p>
     `;
   } else {
-    const frasesReflexion = [
-      'Gracias por dedicar tiempo a reflexionar.',
-      'Tu búsqueda te transforma.',
-      'El corazón que reflexiona es tierra fértil.',
-      '¡Sigue profundizando! Dios habla al alma atenta.'
-    ];
-    const aleatoria = frasesReflexion[Math.floor(Math.random() * frasesReflexion.length)];
-    resultadoContainer.innerHTML = `
-      <h2>Gracias por Reflexionar</h2>
-      <p>${aleatoria}</p>
-    `;
+    resultadoContainer.textContent = 'Gracias por participar.';
   }
 }
