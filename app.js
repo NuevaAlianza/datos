@@ -5,7 +5,6 @@ let puntaje = 0;
 let tipoSeleccionado = '';
 let timerInterval;
 
-// Sonidos
 const clickSound = new Audio('click.mp3');
 const inicioSound = new Audio('inicio.mp3');
 const warningSound = new Audio('warning.mp3');
@@ -69,60 +68,98 @@ function mostrarPregunta() {
   timerBar.style.background = 'green';
   timerBar.style.width = '100%';
 
+  // Limpiar animaciones para poder reaplicar
+  preguntaContainer.classList.remove('fade-in');
+  opcionesContainer.classList.remove('fade-in');
+  mostrarRespuestaBtn.classList.remove('fade-in');
+  siguienteBtn.classList.remove('fade-in');
+  reiniciarBtn.classList.remove('fade-in');
+  respuestaContainer.classList.remove('fade-in');
+
   const actual = preguntasFiltradas[indice];
   preguntaContainer.textContent = actual.pregunta;
   opcionesContainer.innerHTML = '';
   respuestaContainer.classList.add('oculto');
-  respuestaContainer.classList.remove('fade-in');
   mostrarRespuestaBtn.classList.add('oculto');
   siguienteBtn.classList.add('oculto');
   timerBar.classList.remove('oculto');
 
   if (tipoSeleccionado === 'quiz') {
     const opciones = [actual.respuesta, actual.opcion_1, actual.opcion_2, actual.opcion_3]
-      .map((text, i) => ({ text: text || '---', index: i }));
+      .filter(Boolean)
+      .map((text, i) => ({ text, index: i }));
     opciones.sort(() => Math.random() - 0.5);
 
     opcionesContainer.classList.remove('oculto');
-    opciones.forEach((op, i) => {
+    opciones.forEach(op => {
       const btn = document.createElement('button');
       btn.textContent = op.text;
       btn.onclick = () => {
         clickSound.play();
-        if (op.index === actual.correcta) {
+        if (op.text === actual.respuesta) {
           btn.style.background = 'green';
+          btn.classList.add('pulse');
           puntaje++;
         } else {
           btn.style.background = 'red';
+          btn.classList.add('shake');
+          // Mostrar la respuesta correcta
+          Array.from(opcionesContainer.children).forEach(b => {
+            if (b.textContent === actual.respuesta) b.style.background = 'green';
+          });
         }
         Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
         siguienteBtn.classList.remove('oculto');
+        siguienteBtn.classList.add('fade-in');
         clearInterval(timerInterval);
         timerBar.classList.add('oculto');
       };
       opcionesContainer.appendChild(btn);
     });
+    // Animar opciones y pregunta
+    preguntaContainer.classList.add('fade-in');
+    opcionesContainer.classList.add('fade-in');
   } else {
     opcionesContainer.classList.add('oculto');
     respuestaContainer.textContent = actual.respuesta;
     mostrarRespuestaBtn.classList.remove('oculto');
+    mostrarRespuestaBtn.classList.add('fade-in');
+    preguntaContainer.classList.add('fade-in');
     iniciarTemporizador();
   }
 }
 
 function iniciarTemporizador() {
   let duracion = 58;
+  timerBar.style.background = 'green';
+  timerBar.style.width = '100%';
+  clearInterval(timerInterval);
+
   timerInterval = setInterval(() => {
     duracion--;
     timerBar.style.width = `${(duracion / 58) * 100}%`;
-    if (duracion === 20) warningSound.play();
-    if (duracion === 10) finSound.play();
-    if (duracion <= 20) timerBar.style.background = 'yellow';
-    if (duracion <= 10) timerBar.style.background = 'red';
+
+    if (duracion === 20) {
+      warningSound.play();
+      timerBar.classList.add('pulse-yellow');
+      timerBar.style.background = 'yellow';
+    }
+
+    if (duracion === 10) {
+      finSound.play();
+      timerBar.classList.remove('pulse-yellow');
+      timerBar.classList.add('pulse-red');
+      timerBar.style.background = 'red';
+    }
+
     if (duracion <= 0) {
       clearInterval(timerInterval);
       mostrarRespuestaBtn.classList.remove('oculto');
+      mostrarRespuestaBtn.classList.add('fade-in');
       siguienteBtn.classList.remove('oculto');
+      siguienteBtn.classList.add('fade-in');
+      timerBar.classList.remove('pulse-red');
+      timerBar.classList.add('fade-out');
     }
   }, 1000);
 }
@@ -133,6 +170,7 @@ mostrarRespuestaBtn.addEventListener('click', () => {
   respuestaContainer.classList.add('fade-in');
   mostrarRespuestaBtn.classList.add('oculto');
   siguienteBtn.classList.remove('oculto');
+  siguienteBtn.classList.add('fade-in');
 });
 
 siguienteBtn.addEventListener('click', () => {
@@ -158,6 +196,7 @@ function mostrarResultado() {
   resultadoContainer.classList.remove('oculto');
   resultadoContainer.classList.add('fade-in');
   reiniciarBtn.classList.remove('oculto');
+  reiniciarBtn.classList.add('fade-in');
 
   if (tipoSeleccionado === 'quiz') {
     const porcentaje = (puntaje / preguntasFiltradas.length) * 100;
@@ -184,7 +223,11 @@ function mostrarResultado() {
       '¡Sigue profundizando! Dios habla al alma atenta.'
     ];
     const aleatoria = frasesReflexion[Math.floor(Math.random() * frasesReflexion.length)];
-    resultadoContainer.innerHTML = `<h2>Gracias por Reflexionar</h2><p>${aleatoria}</p>`;
+    resultadoContainer.innerHTML = `
+      <h2>Gracias por Reflexionar</h2>
+      <p>${aleatoria}</p>
+    `;
   }
 }
+
 
