@@ -1,12 +1,12 @@
- let preguntas = [];
+let preguntas = [];
 let preguntasFiltradas = [];
 let indice = 0;
 let puntaje = 0;
 let timerInterval;
-let tipoSeleccionado = '';
+let tipoSeleccionado = "";
 
-const tipoSelect = document.getElementById('tipoSelect');
 const temaSelect = document.getElementById('temaSelect');
+const tipoSelect = document.getElementById('tipoSelect');
 const iniciarBtn = document.getElementById('iniciarBtn');
 const contenido = document.getElementById('contenido');
 const preguntaContainer = document.getElementById('pregunta-container');
@@ -34,10 +34,23 @@ fetch('datos.json')
   });
 
 iniciarBtn.addEventListener('click', () => {
-  tipoSeleccionado = tipoSelect.value;
+  if (iniciarBtn.textContent === "Volver al inicio") {
+    // Reset al inicio
+    contenido.classList.add('oculto');
+    resultadoContainer.classList.add('oculto');
+    iniciarBtn.textContent = "Iniciar";
+    temaSelect.disabled = false;
+    tipoSelect.disabled = false;
+    temaSelect.value = "";
+    tipoSelect.value = "";
+    return;
+  }
+
   const tema = temaSelect.value;
-  if (!tipoSeleccionado) return alert('Por favor selecciona un tipo (Reflexión o Quiz)');
+  tipoSeleccionado = tipoSelect.value;
+
   if (!tema) return alert('Por favor selecciona un tema');
+  if (!tipoSeleccionado) return alert('Por favor selecciona un tipo');
 
   preguntasFiltradas = preguntas.filter(p => p.tema === tema && p.tipo === tipoSeleccionado);
   if (preguntasFiltradas.length === 0) {
@@ -46,9 +59,14 @@ iniciarBtn.addEventListener('click', () => {
   }
   indice = 0;
   puntaje = 0;
+
   contenido.classList.remove('oculto');
   resultadoContainer.classList.add('oculto');
-  document.getElementById('seleccion').classList.add('oculto'); // ocultar selección al iniciar
+
+  temaSelect.disabled = true;
+  tipoSelect.disabled = true;
+  iniciarBtn.disabled = true;
+
   mostrarPregunta();
 });
 
@@ -78,7 +96,6 @@ function mostrarPregunta() {
         } else {
           btn.style.background = 'red';
         }
-        // Deshabilitar todos botones para evitar múltiples clicks
         Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
         siguienteBtn.classList.remove('oculto');
         clearInterval(timerInterval);
@@ -129,30 +146,33 @@ function mostrarResultado() {
   contenido.classList.add('oculto');
   resultadoContainer.classList.remove('oculto');
 
-  let porcentaje = Math.round((puntaje / preguntasFiltradas.length) * 100);
-  let mensajeFinal = '';
-
-  if (porcentaje <= 75) {
-    mensajeFinal = 'Sigamos creciendo juntos. Compartiendo más en comunidad, seremos mejores.';
-  } else if (porcentaje > 75 && porcentaje <= 87) {
-    mensajeFinal = '¡Estás encaminado! Tu conocimiento es bueno y puede inspirar a otros.';
+  if (tipoSeleccionado === 'reflexion') {
+    const mensajesMotivadores = [
+      "Gracias por dedicar tiempo a reflexionar. Que estas palabras sigan iluminando tu camino cada día.",
+      "La reflexión es el primer paso hacia la transformación. Sigue creciendo en sabiduría y fe.",
+      "Cada momento de reflexión fortalece tu espíritu. Que esta experiencia te impulse a seguir adelante.",
+      "El camino hacia el crecimiento personal se construye con reflexión. ¡Sigue adelante con fe y esperanza!",
+      "Reflexionar es abrir el corazón. Que esta experiencia te acerque más a la paz y la luz interior."
+    ];
+    const mensaje = mensajesMotivadores[Math.floor(Math.random() * mensajesMotivadores.length)];
+    resultadoContainer.textContent = mensaje;
   } else {
-    mensajeFinal = '¡Eres un iluminado de la Palabra! Sigue brillando y guiando con sabiduría.';
+    const porcentaje = (puntaje / preguntasFiltradas.length) * 100;
+    let frase = "";
+    if (porcentaje < 75) {
+      frase = "Si compartimos un poco más en comunidad seremos mejores.";
+    } else if (porcentaje < 87) {
+      frase = "Estás encaminado. Eres bueno.";
+    } else {
+      frase = "Eres un iluminado de la palabra.";
+    }
+    resultadoContainer.textContent = `Completado. Puntaje: ${puntaje} / ${preguntasFiltradas.length} (${porcentaje.toFixed(2)}%). ${frase}`;
   }
 
-  resultadoContainer.innerHTML = `
-    <h2>Completado</h2>
-    <p>Puntaje: ${puntaje} / ${preguntasFiltradas.length} (${porcentaje}%)</p>
-    <p>${mensajeFinal}</p>
-    <button id="reiniciarBtn">Reiniciar</button>
-  `;
+  iniciarBtn.textContent = "Volver al inicio";
+  iniciarBtn.classList.remove('oculto');
+  iniciarBtn.disabled = false;
 
-  // Mostrar selección otra vez al reiniciar
-  document.getElementById('reiniciarBtn').addEventListener('click', () => {
-    resultadoContainer.classList.add('oculto');
-    contenido.classList.add('oculto');
-    document.getElementById('seleccion').classList.remove('oculto');
-    tipoSelect.value = '';
-    temaSelect.value = '';
-  });
+  mostrarRespuestaBtn.classList.add('oculto');
+  siguienteBtn.classList.add('oculto');
 }
