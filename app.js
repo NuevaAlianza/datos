@@ -32,7 +32,7 @@ fetch('datos.json')
     console.error('Error cargando preguntas:', err);
   });
 
-// ✅ Actualiza los temas según el tipo seleccionado
+// Actualiza los temas según el tipo seleccionado
 tipoSelect.addEventListener('change', () => {
   const tipo = tipoSelect.value;
   temaSelect.innerHTML = '<option value="">-- Selecciona tema --</option>';
@@ -96,9 +96,8 @@ function mostrarPregunta() {
   timerBar.classList.remove('oculto');
 
   if (tipoSeleccionado === 'quiz' || tipoSeleccionado === 'quiz comentado') {
-    const opciones = [actual.respuesta, actual.opcion_1, actual.opcion_2, actual.opcion_3]
-      .filter(Boolean)
-      .map((text, i) => ({ text, index: i }));
+    const opcionesTexto = [actual.respuesta, actual.opcion_1, actual.opcion_2, actual.opcion_3].filter(Boolean);
+    const opciones = opcionesTexto.map((text, i) => ({ text, index: i }));
     opciones.sort(() => Math.random() - 0.5);
 
     opcionesContainer.classList.remove('oculto');
@@ -107,7 +106,9 @@ function mostrarPregunta() {
       btn.textContent = op.text;
       btn.onclick = () => {
         clickSound.play();
-        if (op.text === actual.respuesta) {
+        Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
+
+        if (op.index === actual.correcta) {
           btn.style.background = 'green';
           btn.classList.add('pulse');
           puntaje++;
@@ -115,13 +116,12 @@ function mostrarPregunta() {
           btn.style.background = 'red';
           btn.classList.add('shake');
           Array.from(opcionesContainer.children).forEach(b => {
-            if (b.textContent === actual.respuesta) b.style.background = 'green';
+            if (b.textContent === opcionesTexto[actual.correcta]) b.style.background = 'green';
           });
         }
-        Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
 
         if (tipoSeleccionado === 'quiz comentado') {
-          respuestaContainer.textContent = actual.comentario || 'Sin comentario adicional.';
+          respuestaContainer.textContent = actual['cita biblica'] || 'Sin comentario adicional.';
           respuestaContainer.classList.remove('oculto');
           respuestaContainer.classList.add('fade-in');
         }
