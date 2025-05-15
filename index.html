@@ -1,44 +1,293 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>App de Preguntas</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Preguntas por Tema y Tipo - Quiz Comentado</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff7e6;
+    color: #333;
+    margin: 0; padding: 20px;
+  }
+  select, button {
+    padding: 10px;
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+  #preguntaContainer {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  #opcionesContainer button {
+    display: block;
+    margin: 8px 0;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: #f0c987;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  #opcionesContainer button:hover:not(:disabled) {
+    background-color: #f7d68e;
+  }
+  #opcionesContainer button:disabled {
+    cursor: default;
+  }
+  .green {
+    background-color: #4caf50 !important;
+    color: white;
+  }
+  .red {
+    background-color: #f44336 !important;
+    color: white;
+  }
+  #respuestaContainer {
+    margin-top: 15px;
+    font-size: 1rem;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #ffe9b3;
+    display: none;
+  }
+  #respuestaContainer.visible {
+    display: block;
+  }
+  #siguienteBtn, #mostrarRespuestaBtn, #reiniciarBtn {
+    margin-top: 20px;
+  }
+  #mensajeFinal {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Nueva Alianza</h1>
-    
-    <div id="seleccion">
-      <label for="tipoSelect">Selecciona el tipo:</label>
-      <select id="tipoSelect">
-        <option value="">-- Selecciona tipo --</option>
-        <option value="reflexion">Reflexión</option>
-        <option value="quiz">Quiz</option>
-      </select>
 
-      <label for="temaSelect">Selecciona un tema:</label>
-      <select id="temaSelect">
-        <option value="">-- Selecciona tema --</option>
-      </select>
+<h1>Preguntas por Tema y Tipo</h1>
 
-      <button id="iniciarBtn" type="button">Iniciar</button>
-    </div>
+<label for="temaSelect">Selecciona Tema:</label>
+<select id="temaSelect">
+  <option value="">-- Selecciona tema --</option>
+</select>
 
-    <div id="contenido" class="oculto">
-      <div id="pregunta-container"></div>
-      <div id="opciones-container" class="opciones"></div>
-      <div id="timer" class="barra-tiempo"></div>
-      <div id="respuesta-container" class="oculto"></div>
-      <button id="mostrarRespuestaBtn" class="oculto" type="button">Mostrar Respuesta</button>
-      <button id="siguienteBtn" class="oculto" type="button">Siguiente</button>
-    </div>
+<label for="tipoSelect">Selecciona Tipo:</label>
+<select id="tipoSelect">
+  <option value="">-- Selecciona tipo --</option>
+  <option value="reflexion">Reflexión</option>
+  <option value="quiz">Quiz</option>
+  <option value="quiz_comentado">Quiz Comentado</option> <!-- NUEVO -->
+</select>
 
-    <div id="resultado-container" class="oculto"></div>
-    <button id="reiniciarBtn" class="oculto" type="button">Volver al inicio</button>
-  </div>
+<button id="iniciarBtn">Iniciar</button>
 
-  <script src="app.js"></script>
+<div id="preguntaContainer"></div>
+<div id="opcionesContainer"></div>
+
+<div id="respuestaContainer"></div>
+
+<button id="mostrarRespuestaBtn" class="oculto">Mostrar Respuesta</button>
+<button id="siguienteBtn" class="oculto">Siguiente</button>
+<button id="reiniciarBtn" class="oculto">Reiniciar</button>
+
+<div id="mensajeFinal"></div>
+
+<script>
+const datos = [
+  {
+    tema: "Fe",
+    tipo: "quiz_comentado",
+    pregunta: "¿Qué significa tener fe?",
+    opciones: ["Confiar en Dios", "Tener dinero", "Ser famoso"],
+    respuesta: "Confiar en Dios",
+    "cita biblica": "Hebreos 11:1"
+  },
+  {
+    tema: "Fe",
+    tipo: "quiz",
+    pregunta: "¿Quién es el autor de la fe?",
+    opciones: ["Dios", "Jesús", "El Espíritu Santo"],
+    respuesta: "Dios",
+    "cita biblica": "Hebreos 12:2"
+  },
+  {
+    tema: "Amor",
+    tipo: "reflexion",
+    pregunta: "¿Cómo podemos mostrar el amor de Dios en la vida diaria?",
+    respuesta: "Amando a nuestro prójimo como a nosotros mismos.",
+    "cita biblica": "1 Juan 4:7"
+  }
+];
+
+const temaSelect = document.getElementById('temaSelect');
+const tipoSelect = document.getElementById('tipoSelect');
+const iniciarBtn = document.getElementById('iniciarBtn');
+const preguntaContainer = document.getElementById('preguntaContainer');
+const opcionesContainer = document.getElementById('opcionesContainer');
+const respuestaContainer = document.getElementById('respuestaContainer');
+const mostrarRespuestaBtn = document.getElementById('mostrarRespuestaBtn');
+const siguienteBtn = document.getElementById('siguienteBtn');
+const reiniciarBtn = document.getElementById('reiniciarBtn');
+const mensajeFinal = document.getElementById('mensajeFinal');
+
+let preguntasFiltradas = [];
+let indiceActual = 0;
+let puntaje = 0;
+
+function llenarTemas() {
+  const temas = [...new Set(datos.map(d => d.tema))];
+  temas.forEach(t => {
+    const option = document.createElement('option');
+    option.value = t;
+    option.textContent = t;
+    temaSelect.appendChild(option);
+  });
+}
+
+llenarTemas();
+
+function iniciar() {
+  const tema = temaSelect.value;
+  const tipo = tipoSelect.value;
+  if (!tema || !tipo) {
+    alert('Por favor, selecciona tema y tipo.');
+    return;
+  }
+
+  preguntasFiltradas = datos.filter(d => d.tema === tema && d.tipo === tipo);
+  if (preguntasFiltradas.length === 0) {
+    alert('No hay preguntas para esa combinación.');
+    return;
+  }
+
+  indiceActual = 0;
+  puntaje = 0;
+  mensajeFinal.textContent = '';
+  reiniciarBtn.classList.add('oculto');
+  mostrarRespuestaBtn.classList.add('oculto');
+  siguienteBtn.classList.add('oculto');
+  respuestaContainer.classList.remove('visible');
+  respuestaContainer.innerHTML = '';
+  preguntaContainer.textContent = '';
+  opcionesContainer.innerHTML = '';
+
+  mostrarPregunta();
+}
+
+function mostrarPregunta() {
+  respuestaContainer.classList.remove('visible');
+  respuestaContainer.innerHTML = '';
+  siguienteBtn.classList.add('oculto');
+  mostrarRespuestaBtn.classList.add('oculto');
+  opcionesContainer.innerHTML = '';
+
+  const actual = preguntasFiltradas[indiceActual];
+  preguntaContainer.textContent = actual.pregunta;
+
+  const tipo = tipoSelect.value;
+
+  if (tipo === 'reflexion') {
+    // Solo mostrar la pregunta
+    // Se puede mostrar la respuesta al botón "Mostrar Respuesta"
+    mostrarRespuestaBtn.classList.remove('oculto');
+  } else if (tipo === 'quiz' || tipo === 'quiz_comentado') {
+    // Mostrar opciones como botones
+    actual.opciones.forEach(op => {
+      const btn = document.createElement('button');
+      btn.textContent = op;
+      btn.onclick = () => {
+        // Evitar múltiples clics
+        if (opcionesContainer.querySelector('button[disabled]')) return;
+
+        if (op === actual.respuesta) {
+          btn.classList.add('green');
+          puntaje++;
+        } else {
+          btn.classList.add('red');
+          // Marcar correcta
+          Array.from(opcionesContainer.children).forEach(b => {
+            if (b.textContent === actual.respuesta) {
+              b.classList.add('green');
+            }
+          });
+        }
+
+        // Para quiz_comentado, mostrar respuesta y cita inmediatamente
+        if (tipo === 'quiz_comentado') {
+          respuestaContainer.innerHTML = `<strong>Respuesta correcta:</strong> ${actual.respuesta}<br><em>${actual["cita biblica"] || ''}</em>`;
+          respuestaContainer.classList.add('visible');
+        }
+
+        // Deshabilitar botones
+        Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
+
+        // Mostrar botones siguiente y ocultar mostrarRespuestaBtn en quiz_comentado
+        siguienteBtn.classList.remove('oculto');
+        mostrarRespuestaBtn.classList.toggle('oculto', tipo === 'quiz_comentado);
+      };
+      opcionesContainer.appendChild(btn);
+    });
+  }
+}
+
+iniciarBtn.addEventListener('click', () => {
+  iniciar();
+});
+
+siguienteBtn.addEventListener('click', () => {
+  indiceActual++;
+  respuestaContainer.classList.remove('visible');
+  respuestaContainer.innerHTML = '';
+  if (indiceActual >= preguntasFiltradas.length) {
+    mostrarResultados();
+  } else {
+    mostrarPregunta();
+  }
+});
+
+mostrarRespuestaBtn.addEventListener('click', () => {
+  if (preguntasFiltradas.length === 0) return;
+  const actual = preguntasFiltradas[indiceActual];
+  respuestaContainer.innerHTML = actual.respuesta || '';
+  if (actual["cita biblica"]) {
+    respuestaContainer.innerHTML += `<br><em>${actual["cita biblica"]}</em>`;
+  }
+  respuestaContainer.classList.add('visible');
+  mostrarRespuestaBtn.classList.add('oculto');
+});
+
+reiniciarBtn.addEventListener('click', () => {
+  indiceActual = 0;
+  puntaje = 0;
+  mensajeFinal.textContent = '';
+  reiniciarBtn.classList.add('oculto');
+  preguntaContainer.textContent = '';
+  opcionesContainer.innerHTML = '';
+  respuestaContainer.innerHTML = '';
+  respuestaContainer.classList.remove('visible');
+  mostrarRespuestaBtn.classList.add('oculto');
+  siguienteBtn.classList.add('oculto');
+});
+
+function mostrarResultados() {
+  preguntaContainer.textContent = '';
+  opcionesContainer.innerHTML = '';
+  respuestaContainer.innerHTML = '';
+  respuestaContainer.classList.remove('visible');
+  siguienteBtn.classList.add('oculto');
+  mostrarRespuestaBtn.classList.add('oculto');
+
+  const total = preguntasFiltradas.length;
+  mensajeFinal.textContent = `Has respondido ${puntaje} de ${total} correctamente.`;
+
+  reiniciarBtn.classList.remove('oculto');
+}
+</script>
+
 </body>
 </html>
