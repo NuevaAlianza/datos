@@ -1041,7 +1041,7 @@
     "opcion_1": "Construyó un altar a Baal",
     "opcion_2": "Se convirtió en sacerdote de Marduk",
     "opcion_3": "Se unió a la guardia del rey",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Daniel 1:8"
   },
   {
@@ -1052,7 +1052,7 @@
     "opcion_1": "Los leones estaban dormidos",
     "opcion_2": "Daniel luchó y venció a los leones",
     "opcion_3": "Los guardias lo rescataron antes del amanecer",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Daniel 6:22"
   },
   {
@@ -1063,7 +1063,7 @@
     "opcion_1": "Explicó la historia de Moisés",
     "opcion_2": "Habló sobre la Torre de Babel",
     "opcion_3": "Predijo la llegada de Jesús",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Daniel 2:31-45"
   },
   {
@@ -1074,7 +1074,7 @@
     "opcion_1": "Se casó con un rey",
     "opcion_2": "Regresó a su país natal sin Noemí",
     "opcion_3": "Se hizo sacerdotisa en Israel",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Rut 1:16"
   },
   {
@@ -1085,7 +1085,7 @@
     "opcion_1": "David",
     "opcion_2": "Elí",
     "opcion_3": "Samuel",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Rut 4:13"
   },
   {
@@ -1096,7 +1096,7 @@
     "opcion_1": "Vendía telas en el mercado",
     "opcion_2": "Era pastora de ovejas",
     "opcion_3": "Era tejedora en el templo",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Rut 2:2"
   },
   {
@@ -1107,7 +1107,7 @@
     "opcion_1": "Fundar una iglesia en Jerusalén",
     "opcion_2": "Ser rey de Israel",
     "opcion_3": "Escribir los Evangelios",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Mateo 3:3"
   },
   {
@@ -1118,7 +1118,7 @@
     "opcion_1": "En el Mar Muerto",
     "opcion_2": "En el Templo de Jerusalén",
     "opcion_3": "En el río Nilo",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Marcos 1:5"
   },
   {
@@ -1129,7 +1129,7 @@
     "opcion_1": "Pan y vino",
     "opcion_2": "Pescado y uvas",
     "opcion_3": "Manzanas y queso",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Mateo 3:4"
   },
   {
@@ -1140,7 +1140,7 @@
     "opcion_1": "En el templo de Jerusalén",
     "opcion_2": "En el monte Sinaí",
     "opcion_3": "En una sinagoga",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Juan 4:6"
   },
   {
@@ -1151,7 +1151,7 @@
     "opcion_1": "Pan y vino",
     "opcion_2": "Oro y plata",
     "opcion_3": "Un lugar para vivir",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Juan 4:10"
   },
   {
@@ -1162,7 +1162,7 @@
     "opcion_1": "Porque Jesús hablaba en arameo",
     "opcion_2": "Porque Jesús era un carpintero",
     "opcion_3": "Porque Jesús tenía un manto blanco",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Juan 4:17-18"
   },
   {
@@ -1173,7 +1173,7 @@
     "opcion_1": "Para escapar de una guerra",
     "opcion_2": "Para visitar otra ciudad",
     "opcion_3": "Para esconderse de un enemigo",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Génesis 6:14-17"
   },
   {
@@ -1184,7 +1184,7 @@
     "opcion_1": "7 días",
     "opcion_2": "100 días",
     "opcion_3": "12 días",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Génesis 7:12"
   },
   {
@@ -1195,7 +1195,7 @@
     "opcion_1": "Una paloma blanca",
     "opcion_2": "Un sol brillante",
     "opcion_3": "Un terremoto",
-    "correcta": "",
+    "correcta": 0,
     "cita biblica": "Génesis 9:13-16"
   }
 ]
