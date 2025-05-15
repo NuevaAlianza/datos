@@ -5,11 +5,11 @@ let puntaje = 0;
 let tipoSeleccionado = '';
 let timerInterval;
 
-// Cargar sonidos
-const sonidoInicio = new Audio('inicio.mp3');
-const sonidoWarning = new Audio('warning.mp3');
-const sonidoFin = new Audio('fin.mp3');
-const sonidoClick = new Audio('click.mp3');
+// Sonidos
+const clickSound = new Audio('click.mp3');
+const inicioSound = new Audio('inicio.mp3');
+const warningSound = new Audio('warning.mp3');
+const finSound = new Audio('fin.mp3');
 
 const tipoSelect = document.getElementById('tipoSelect');
 const temaSelect = document.getElementById('temaSelect');
@@ -41,6 +41,9 @@ fetch('datos.json')
   });
 
 iniciarBtn.addEventListener('click', () => {
+  clickSound.play();
+  inicioSound.play();
+
   tipoSeleccionado = tipoSelect.value;
   const tema = temaSelect.value;
   if (!tipoSeleccionado || !tema) return alert('Por favor selecciona tipo y tema');
@@ -54,10 +57,6 @@ iniciarBtn.addEventListener('click', () => {
   preguntasFiltradas = preguntasFiltradas.sort(() => Math.random() - 0.5);
   indice = 0;
   puntaje = 0;
-
-  // Sonido inicio al comenzar la sesión
-  sonidoInicio.play().catch(() => {});
-
   contenido.classList.remove('oculto');
   resultadoContainer.classList.add('oculto');
   reiniciarBtn.classList.add('oculto');
@@ -74,6 +73,7 @@ function mostrarPregunta() {
   preguntaContainer.textContent = actual.pregunta;
   opcionesContainer.innerHTML = '';
   respuestaContainer.classList.add('oculto');
+  respuestaContainer.classList.remove('fade-in');
   mostrarRespuestaBtn.classList.add('oculto');
   siguienteBtn.classList.add('oculto');
   timerBar.classList.remove('oculto');
@@ -88,9 +88,7 @@ function mostrarPregunta() {
       const btn = document.createElement('button');
       btn.textContent = op.text;
       btn.onclick = () => {
-        // Sonido click al seleccionar opción
-        sonidoClick.play().catch(() => {});
-
+        clickSound.play();
         if (op.index === actual.correcta) {
           btn.style.background = 'green';
           puntaje++;
@@ -101,9 +99,6 @@ function mostrarPregunta() {
         siguienteBtn.classList.remove('oculto');
         clearInterval(timerInterval);
         timerBar.classList.add('oculto');
-
-        // Sonido fin cuando termina la pregunta en quiz
-        sonidoFin.play().catch(() => {});
       };
       opcionesContainer.appendChild(btn);
     });
@@ -120,17 +115,10 @@ function iniciarTemporizador() {
   timerInterval = setInterval(() => {
     duracion--;
     timerBar.style.width = `${(duracion / 58) * 100}%`;
-
-    if (duracion === 20) {
-      timerBar.style.background = 'yellow';
-      // Sonido warning al cambiar a amarillo
-      sonidoWarning.play().catch(() => {});
-    }
-    if (duracion === 10) {
-      timerBar.style.background = 'red';
-      // Sonido fin cuando queda poco tiempo (rojo)
-      sonidoFin.play().catch(() => {});
-    }
+    if (duracion === 20) warningSound.play();
+    if (duracion === 10) finSound.play();
+    if (duracion <= 20) timerBar.style.background = 'yellow';
+    if (duracion <= 10) timerBar.style.background = 'red';
     if (duracion <= 0) {
       clearInterval(timerInterval);
       mostrarRespuestaBtn.classList.remove('oculto');
@@ -140,12 +128,15 @@ function iniciarTemporizador() {
 }
 
 mostrarRespuestaBtn.addEventListener('click', () => {
+  clickSound.play();
   respuestaContainer.classList.remove('oculto');
+  respuestaContainer.classList.add('fade-in');
   mostrarRespuestaBtn.classList.add('oculto');
   siguienteBtn.classList.remove('oculto');
 });
 
 siguienteBtn.addEventListener('click', () => {
+  clickSound.play();
   indice++;
   if (indice < preguntasFiltradas.length) {
     mostrarPregunta();
@@ -155,6 +146,7 @@ siguienteBtn.addEventListener('click', () => {
 });
 
 reiniciarBtn.addEventListener('click', () => {
+  clickSound.play();
   document.getElementById('seleccion').classList.remove('oculto');
   contenido.classList.add('oculto');
   resultadoContainer.classList.add('oculto');
@@ -164,6 +156,7 @@ reiniciarBtn.addEventListener('click', () => {
 function mostrarResultado() {
   contenido.classList.add('oculto');
   resultadoContainer.classList.remove('oculto');
+  resultadoContainer.classList.add('fade-in');
   reiniciarBtn.classList.remove('oculto');
 
   if (tipoSeleccionado === 'quiz') {
@@ -194,3 +187,4 @@ function mostrarResultado() {
     resultadoContainer.innerHTML = `<h2>Gracias por Reflexionar</h2><p>${aleatoria}</p>`;
   }
 }
+
