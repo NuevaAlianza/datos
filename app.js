@@ -27,17 +27,29 @@ fetch('datos.json')
   .then(res => res.json())
   .then(data => {
     preguntas = data;
-    const temasUnicos = [...new Set(preguntas.map(p => p.tema))];
-    temasUnicos.forEach(t => {
-      const opt = document.createElement('option');
-      opt.value = t;
-      opt.textContent = t;
-      temaSelect.appendChild(opt);
-    });
   })
   .catch(err => {
     console.error('Error cargando preguntas:', err);
   });
+
+// ✅ Actualiza los temas según el tipo seleccionado
+tipoSelect.addEventListener('change', () => {
+  const tipo = tipoSelect.value;
+  temaSelect.innerHTML = '<option value="">-- Selecciona tema --</option>';
+
+  const temasPorTipo = preguntas
+    .filter(p => p.tipo === tipo)
+    .map(p => p.tema);
+
+  const temasUnicos = [...new Set(temasPorTipo)];
+
+  temasUnicos.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t;
+    opt.textContent = t;
+    temaSelect.appendChild(opt);
+  });
+});
 
 iniciarBtn.addEventListener('click', () => {
   clickSound.play();
@@ -68,7 +80,6 @@ function mostrarPregunta() {
   timerBar.style.background = 'green';
   timerBar.style.width = '100%';
 
-  // Limpiar animaciones para poder reaplicar
   preguntaContainer.classList.remove('fade-in');
   opcionesContainer.classList.remove('fade-in');
   mostrarRespuestaBtn.classList.remove('fade-in');
@@ -84,7 +95,7 @@ function mostrarPregunta() {
   siguienteBtn.classList.add('oculto');
   timerBar.classList.remove('oculto');
 
-  if (tipoSeleccionado === 'quiz') {
+  if (tipoSeleccionado === 'quiz' || tipoSeleccionado === 'quiz comentado') {
     const opciones = [actual.respuesta, actual.opcion_1, actual.opcion_2, actual.opcion_3]
       .filter(Boolean)
       .map((text, i) => ({ text, index: i }));
@@ -103,12 +114,18 @@ function mostrarPregunta() {
         } else {
           btn.style.background = 'red';
           btn.classList.add('shake');
-          // Mostrar la respuesta correcta
           Array.from(opcionesContainer.children).forEach(b => {
             if (b.textContent === actual.respuesta) b.style.background = 'green';
           });
         }
         Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
+
+        if (tipoSeleccionado === 'quiz comentado') {
+          respuestaContainer.textContent = actual.comentario || 'Sin comentario adicional.';
+          respuestaContainer.classList.remove('oculto');
+          respuestaContainer.classList.add('fade-in');
+        }
+
         siguienteBtn.classList.remove('oculto');
         siguienteBtn.classList.add('fade-in');
         clearInterval(timerInterval);
@@ -116,10 +133,11 @@ function mostrarPregunta() {
       };
       opcionesContainer.appendChild(btn);
     });
-    // Animar opciones y pregunta
+
     preguntaContainer.classList.add('fade-in');
     opcionesContainer.classList.add('fade-in');
-  } else {
+
+  } else if (tipoSeleccionado === 'reflexion') {
     opcionesContainer.classList.add('oculto');
     respuestaContainer.textContent = actual.respuesta;
     mostrarRespuestaBtn.classList.remove('oculto');
@@ -198,7 +216,7 @@ function mostrarResultado() {
   reiniciarBtn.classList.remove('oculto');
   reiniciarBtn.classList.add('fade-in');
 
-  if (tipoSeleccionado === 'quiz') {
+  if (tipoSeleccionado === 'quiz' || tipoSeleccionado === 'quiz comentado') {
     const porcentaje = (puntaje / preguntasFiltradas.length) * 100;
     let mensaje = '';
 
@@ -229,5 +247,3 @@ function mostrarResultado() {
     `;
   }
 }
-
-
