@@ -1,8 +1,9 @@
-let preguntas = [];
+ let preguntas = [];
 let preguntasFiltradas = [];
 let indice = 0;
 let puntaje = 0;
 let timerInterval;
+let tipoSeleccionado = '';
 
 const tipoSelect = document.getElementById('tipoSelect');
 const temaSelect = document.getElementById('temaSelect');
@@ -14,11 +15,8 @@ const respuestaContainer = document.getElementById('respuesta-container');
 const mostrarRespuestaBtn = document.getElementById('mostrarRespuestaBtn');
 const siguienteBtn = document.getElementById('siguienteBtn');
 const resultadoContainer = document.getElementById('resultado-container');
-const resultadoTexto = document.getElementById('resultadoTexto');
-const reiniciarBtn = document.getElementById('reiniciarBtn');
 const timerBar = document.getElementById('timer');
 
-// Carga las preguntas desde datos.json y llena el select de temas
 fetch('datos.json')
   .then(res => res.json())
   .then(data => {
@@ -35,29 +33,22 @@ fetch('datos.json')
     console.error('Error cargando preguntas:', err);
   });
 
-// Evento para iniciar el quiz o reflexión
 iniciarBtn.addEventListener('click', () => {
-  const tipo = tipoSelect.value;
+  tipoSeleccionado = tipoSelect.value;
   const tema = temaSelect.value;
-
-  if (!tipo) return alert('Por favor selecciona un tipo de pregunta');
+  if (!tipoSeleccionado) return alert('Por favor selecciona un tipo (Reflexión o Quiz)');
   if (!tema) return alert('Por favor selecciona un tema');
 
-  preguntasFiltradas = preguntas.filter(p => p.tema === tema && p.tipo === tipo);
+  preguntasFiltradas = preguntas.filter(p => p.tema === tema && p.tipo === tipoSeleccionado);
   if (preguntasFiltradas.length === 0) {
-    alert('No hay preguntas para esta combinación de tema y tipo');
+    alert('No hay preguntas para este tema y tipo seleccionado');
     return;
   }
-
-  // Reiniciar estados
   indice = 0;
   puntaje = 0;
-
-  // Ocultar selección y mostrar contenido
-  document.getElementById('seleccion').classList.add('oculto');
   contenido.classList.remove('oculto');
   resultadoContainer.classList.add('oculto');
-
+  document.getElementById('seleccion').classList.add('oculto'); // ocultar selección al iniciar
   mostrarPregunta();
 });
 
@@ -65,7 +56,6 @@ function mostrarPregunta() {
   clearInterval(timerInterval);
   timerBar.style.background = 'green';
   timerBar.style.width = '100%';
-  timerBar.classList.remove('oculto');
 
   const actual = preguntasFiltradas[indice];
   preguntaContainer.textContent = actual.pregunta;
@@ -73,36 +63,23 @@ function mostrarPregunta() {
   respuestaContainer.classList.add('oculto');
   mostrarRespuestaBtn.classList.add('oculto');
   siguienteBtn.classList.add('oculto');
+  timerBar.classList.remove('oculto');
 
-  if (actual.tipo === 'quiz') {
+  if (tipoSeleccionado === 'quiz') {
+    const opciones = [actual.respuesta, actual.opcion_1, actual.opcion_2, actual.opcion_3];
     opcionesContainer.classList.remove('oculto');
-    // El índice de la opción correcta (0 = respuesta correcta)
-    // Desordenar opciones para no mostrar siempre igual
-    const opciones = [actual.respuesta, actual.opcion_1, actual.opcion_2, actual.opcion_3].filter(Boolean);
-    // Mezclar opciones
-    const opcionesMezcladas = opciones
-      .map(op => ({ op, sort: Math.random() }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(obj => obj.op);
-
-    opcionesMezcladas.forEach(op => {
+    opciones.forEach((op, i) => {
       const btn = document.createElement('button');
-      btn.textContent = op;
+      btn.textContent = op || '---';
       btn.onclick = () => {
-        // Deshabilitar botones
-        Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
-
-        if (op === actual.respuesta) {
+        if (i === actual.correcta) {
           btn.style.background = 'green';
           puntaje++;
         } else {
           btn.style.background = 'red';
-          // Mostrar la opción correcta en verde
-          Array.from(opcionesContainer.children).forEach(b => {
-            if (b.textContent === actual.respuesta) b.style.background = 'green';
-          });
         }
-
+        // Deshabilitar todos botones para evitar múltiples clicks
+        Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
         siguienteBtn.classList.remove('oculto');
         clearInterval(timerInterval);
         timerBar.classList.add('oculto');
@@ -123,13 +100,8 @@ function iniciarTemporizador() {
   timerInterval = setInterval(() => {
     duracion--;
     timerBar.style.width = `${(duracion / 58) * 100}%`;
-    if (duracion > 20) {
-      timerBar.style.background = 'green';
-    } else if (duracion > 10) {
-      timerBar.style.background = 'yellow';
-    } else {
-      timerBar.style.background = 'red';
-    }
+    if (duracion <= 20) timerBar.style.background = 'yellow';
+    if (duracion <= 10) timerBar.style.background = 'red';
     if (duracion <= 0) {
       clearInterval(timerInterval);
       mostrarRespuestaBtn.classList.remove('oculto');
@@ -156,18 +128,31 @@ siguienteBtn.addEventListener('click', () => {
 function mostrarResultado() {
   contenido.classList.add('oculto');
   resultadoContainer.classList.remove('oculto');
-  resultadoTexto.textContent = `Completado. Puntaje: ${puntaje} / ${preguntasFiltradas.length}`;
-}
 
-// Reiniciar al inicio
-reiniciarBtn.addEventListener('click', () => {
-  resultadoContainer.classList.add('oculto');
-  document.getElementById('seleccion').classList.remove('oculto');
-  tipoSelect.value = '';
-  temaSelect.value = '';
-  contenido.classList.add('oculto');
-  indice = 0;
-  puntaje = 0;
-  clearInterval(timerInterval);
-  timerBar.classList.add('oculto');
-});
+  let porcentaje = Math.round((puntaje / preguntasFiltradas.length) * 100);
+  let mensajeFinal = '';
+
+  if (porcentaje <= 75) {
+    mensajeFinal = 'Sigamos creciendo juntos. Compartiendo más en comunidad, seremos mejores.';
+  } else if (porcentaje > 75 && porcentaje <= 87) {
+    mensajeFinal = '¡Estás encaminado! Tu conocimiento es bueno y puede inspirar a otros.';
+  } else {
+    mensajeFinal = '¡Eres un iluminado de la Palabra! Sigue brillando y guiando con sabiduría.';
+  }
+
+  resultadoContainer.innerHTML = `
+    <h2>Completado</h2>
+    <p>Puntaje: ${puntaje} / ${preguntasFiltradas.length} (${porcentaje}%)</p>
+    <p>${mensajeFinal}</p>
+    <button id="reiniciarBtn">Reiniciar</button>
+  `;
+
+  // Mostrar selección otra vez al reiniciar
+  document.getElementById('reiniciarBtn').addEventListener('click', () => {
+    resultadoContainer.classList.add('oculto');
+    contenido.classList.add('oculto');
+    document.getElementById('seleccion').classList.remove('oculto');
+    tipoSelect.value = '';
+    temaSelect.value = '';
+  });
+}
