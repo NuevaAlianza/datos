@@ -44,7 +44,7 @@ button:hover {
   display: none;
 }
 
-/* Estilos para la barra del temporizador */
+/* Barra temporizador */
 #timer {
   height: 10px;
   background: green;
