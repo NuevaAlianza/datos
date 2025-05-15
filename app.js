@@ -26,11 +26,19 @@ fetch('datos.json')
       opt.textContent = t;
       temaSelect.appendChild(opt);
     });
+  })
+  .catch(err => {
+    console.error('Error cargando preguntas:', err);
   });
 
 iniciarBtn.addEventListener('click', () => {
   const tema = temaSelect.value;
+  if (!tema) return alert('Por favor selecciona un tema');
   preguntasFiltradas = preguntas.filter(p => p.tema === tema);
+  if (preguntasFiltradas.length === 0) {
+    alert('No hay preguntas para este tema');
+    return;
+  }
   indice = 0;
   puntaje = 0;
   contenido.classList.remove('oculto');
@@ -40,20 +48,23 @@ iniciarBtn.addEventListener('click', () => {
 
 function mostrarPregunta() {
   clearInterval(timerInterval);
+  timerBar.style.background = 'green';
+  timerBar.style.width = '100%';
+
   const actual = preguntasFiltradas[indice];
   preguntaContainer.textContent = actual.pregunta;
   opcionesContainer.innerHTML = '';
   respuestaContainer.classList.add('oculto');
   mostrarRespuestaBtn.classList.add('oculto');
   siguienteBtn.classList.add('oculto');
-  timerBar.classList.add('oculto');
-  timerBar.style.width = '100%';
+  timerBar.classList.remove('oculto');
 
   if (actual.tipo === 'quiz') {
     const opciones = [actual.respuesta, actual.opcion_1, actual.opcion_2, actual.opcion_3];
+    opcionesContainer.classList.remove('oculto');
     opciones.forEach((op, i) => {
       const btn = document.createElement('button');
-      btn.textContent = op;
+      btn.textContent = op || '---';
       btn.onclick = () => {
         if (i === actual.correcta) {
           btn.style.background = 'green';
@@ -61,15 +72,19 @@ function mostrarPregunta() {
         } else {
           btn.style.background = 'red';
         }
+        // Deshabilitar todos botones para evitar múltiples clicks
+        Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
         siguienteBtn.classList.remove('oculto');
+        clearInterval(timerInterval);
+        timerBar.classList.add('oculto');
       };
       opcionesContainer.appendChild(btn);
     });
-    opcionesContainer.classList.remove('oculto');
   } else {
+    // Reflexión
+    opcionesContainer.classList.add('oculto');
     respuestaContainer.textContent = actual.respuesta;
     mostrarRespuestaBtn.classList.remove('oculto');
-    timerBar.classList.remove('oculto');
     iniciarTemporizador();
   }
 }
