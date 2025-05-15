@@ -11,19 +11,19 @@
     <h1>Preguntas por Tema</h1>
     
     <div id="seleccion">
-      <label for="tipo">Selecciona el tipo:</label>
+      <label for="tipoSelect">Selecciona el tipo:</label>
       <select id="tipoSelect">
         <option value="">-- Selecciona tipo --</option>
         <option value="reflexion">Reflexión</option>
         <option value="quiz">Quiz</option>
       </select>
 
-      <label for="tema">Selecciona un tema:</label>
+      <label for="temaSelect">Selecciona un tema:</label>
       <select id="temaSelect">
         <option value="">-- Selecciona tema --</option>
       </select>
 
-      <button id="iniciarBtn">Iniciar</button>
+      <button id="iniciarBtn" type="button">Iniciar</button>
     </div>
 
     <div id="contenido" class="oculto">
@@ -31,12 +31,12 @@
       <div id="opciones-container" class="opciones"></div>
       <div id="timer" class="barra-tiempo"></div>
       <div id="respuesta-container" class="oculto"></div>
-      <button id="mostrarRespuestaBtn" class="oculto">Mostrar Respuesta</button>
-      <button id="siguienteBtn" class="oculto">Siguiente</button>
+      <button id="mostrarRespuestaBtn" class="oculto" type="button">Mostrar Respuesta</button>
+      <button id="siguienteBtn" class="oculto" type="button">Siguiente</button>
     </div>
 
     <div id="resultado-container" class="oculto"></div>
-    <button id="reiniciarBtn" class="oculto">Volver al inicio</button>
+    <button id="reiniciarBtn" class="oculto" type="button">Volver al inicio</button>
   </div>
 
   <script src="app.js"></script>
