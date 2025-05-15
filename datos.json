@@ -7,7 +7,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -17,7 +18,8 @@
     "opcion_1": "Juan",
     "opcion_2": "Pablo",
     "opcion_3": "Santiago",
-    "correcta": 1
+    "correcta": 1,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -27,7 +29,8 @@
     "opcion_1": "Buenas obras",
     "opcion_2": "Salvación por ley",
     "opcion_3": "Oración constante",
-    "correcta": 1
+    "correcta": 1,
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -37,7 +40,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -47,7 +51,8 @@
     "opcion_1": "David",
     "opcion_2": "Elías",
     "opcion_3": "Jacob",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -57,7 +62,8 @@
     "opcion_1": "Lo cruzó caminando",
     "opcion_2": "Lo calmó con su bastón",
     "opcion_3": "Lo partió con una espada",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -67,7 +73,8 @@
     "opcion_1": "Rezó",
     "opcion_2": "Golpeó el agua con una piedra",
     "opcion_3": "Llamó al viento",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -77,7 +84,8 @@
     "opcion_1": "Josué",
     "opcion_2": "Caleb",
     "opcion_3": "Abraham",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -87,7 +95,8 @@
     "opcion_1": "Monte Nebo",
     "opcion_2": "Monte Horeb",
     "opcion_3": "Monte de los Olivos",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -97,7 +106,8 @@
     "opcion_1": "En el Monte Nebo",
     "opcion_2": "En la montaña de Horeb",
     "opcion_3": "En el Monte Tabor",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -107,7 +117,8 @@
     "opcion_1": "Que la vería desde lejos",
     "opcion_2": "Que él sería el líder para conquistarla",
     "opcion_3": "Que la dividiría entre las tribus",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -117,7 +128,8 @@
     "opcion_1": "Ranas",
     "opcion_2": "Mosquitos",
     "opcion_3": "Langostas",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -127,7 +139,8 @@
     "opcion_1": "3 días",
     "opcion_2": "7 días",
     "opcion_3": "30 días",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -137,7 +150,8 @@
     "opcion_1": "Rezó a Dios",
     "opcion_2": "Hizo un milagro con su capa",
     "opcion_3": "Llamó al viento",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -147,7 +161,8 @@
     "opcion_1": "Josué y Caleb",
     "opcion_2": "El rey de Judá",
     "opcion_3": "Caleb y Elías",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -157,7 +172,8 @@
     "opcion_1": "Ratones",
     "opcion_2": "Langostas",
     "opcion_3": "Ratas",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -167,7 +183,8 @@
     "opcion_1": "Lo adoró",
     "opcion_2": "Lo guardó como símbolo",
     "opcion_3": "Lo entregó a Aarón",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -177,7 +194,8 @@
     "opcion_1": 12,
     "opcion_2": 7,
     "opcion_3": 15,
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -187,7 +205,8 @@
     "opcion_1": "Aarón",
     "opcion_2": "Caleb",
     "opcion_3": "Elías",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -197,7 +216,8 @@
     "opcion_1": "Sacrificar un cordero",
     "opcion_2": "Sacrificar su riqueza",
     "opcion_3": "Sacrificar a Lot",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -207,7 +227,8 @@
     "opcion_1": "Se negó",
     "opcion_2": "Ofreció un cordero en lugar de su hijo",
     "opcion_3": "Fue a ver a un sacerdote para consultar",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -217,7 +238,8 @@
     "opcion_1": "Jacob",
     "opcion_2": "Moisés",
     "opcion_3": "David",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -227,7 +249,8 @@
     "opcion_1": "Sería el rey de Israel",
     "opcion_2": "Tendría riquezas sin fin",
     "opcion_3": "Su descendencia gobernaría el mundo",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -237,7 +260,8 @@
     "opcion_1": "Rebeca",
     "opcion_2": "Lea",
     "opcion_3": "Raquel",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -247,7 +271,8 @@
     "opcion_1": "Sodoma",
     "opcion_2": "Nínive",
     "opcion_3": "Jericó",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -257,7 +282,8 @@
     "opcion_1": "Eliezer",
     "opcion_2": "Isaac",
     "opcion_3": "Jacob",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -267,7 +293,8 @@
     "opcion_1": "Un sacrificio de cordero",
     "opcion_2": "Un becerro",
     "opcion_3": "Un sacrificio de cabra",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -277,7 +304,8 @@
     "opcion_1": 3,
     "opcion_2": 4,
     "opcion_3": 5,
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -287,7 +315,8 @@
     "opcion_1": "Rebeca",
     "opcion_2": "Lea",
     "opcion_3": "Raquel",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -297,7 +326,8 @@
     "opcion_1": "80 años",
     "opcion_2": "90 años",
     "opcion_3": "120 años",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -307,7 +337,8 @@
     "opcion_1": "En el monte Sinaí",
     "opcion_2": "En el desierto de Paran",
     "opcion_3": "En la ciudad de Betel",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -317,7 +348,8 @@
     "opcion_1": "120 años",
     "opcion_2": "150 años",
     "opcion_3": "200 años",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -327,7 +359,8 @@
     "opcion_1": "Fue a destruirla",
     "opcion_2": "Se alejó del lugar",
     "opcion_3": "Buscó refugio",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -337,7 +370,8 @@
     "opcion_1": "Escapó con su familia",
     "opcion_2": "Se fue a otra ciudad",
     "opcion_3": "No hizo nada",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -347,7 +381,8 @@
     "opcion_1": "Sodoma",
     "opcion_2": "Jerusalén",
     "opcion_3": "Jericó",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -357,7 +392,8 @@
     "opcion_1": "Un día y una noche",
     "opcion_2": "Cinco días y cinco noches",
     "opcion_3": "Cuatro días",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -367,7 +403,8 @@
     "opcion_1": "Tarshis",
     "opcion_2": "Jerusalén",
     "opcion_3": "Egipto",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -377,7 +414,8 @@
     "opcion_1": "No quería ir tan lejos",
     "opcion_2": "No tenía dinero para viajar",
     "opcion_3": "Pensaba que no sería capaz",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -387,7 +425,8 @@
     "opcion_1": "Construid un templo para Dios",
     "opcion_2": "Ayunad y orad tres días",
     "opcion_3": "Regresad a vuestros hogares",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -397,7 +436,8 @@
     "opcion_1": "Nabucodonosor",
     "opcion_2": "Ciro",
     "opcion_3": "Darío",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -407,7 +447,8 @@
     "opcion_1": "Se rieron y desobedecieron",
     "opcion_2": "Se unieron a Jonás en su viaje",
     "opcion_3": "Apedrearon a Jonás",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -417,7 +458,8 @@
     "opcion_1": "Se perdió en el desierto",
     "opcion_2": "Fue arrestado",
     "opcion_3": "Fue derrotado por un ejército",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -427,7 +469,8 @@
     "opcion_1": "La ciudad fue destruida",
     "opcion_2": "Jonás murió dentro del pez",
     "opcion_3": "Jonás fue condenado a vivir con el pez",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -437,7 +480,8 @@
     "opcion_1": "Que continuara predicando en otras ciudades",
     "opcion_2": "Que lo castigara",
     "opcion_3": "Que la ciudad no sería destruida",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -447,7 +491,8 @@
     "opcion_1": "Ballena",
     "opcion_2": "Tiburón",
     "opcion_3": "Delfín",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -457,7 +502,8 @@
     "opcion_1": "Que lo castigara",
     "opcion_2": "Que lo dejara morir",
     "opcion_3": "Que le diera fuerzas",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -467,7 +513,8 @@
     "opcion_1": "Porque odiaba a los habitantes",
     "opcion_2": "Porque tenía miedo",
     "opcion_3": "Porque ya había predicado antes",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -477,7 +524,8 @@
     "opcion_1": "Se quedó en la playa",
     "opcion_2": "Regresó a Jerusalén",
     "opcion_3": "Se fue a otro lugar",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "quiz",
@@ -487,7 +535,8 @@
     "opcion_1": "si",
     "opcion_2": "quien",
     "opcion_3": "quizas",
-    "correcta": 0
+    "correcta": 0,
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -497,7 +546,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -507,7 +557,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -517,7 +568,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -527,7 +579,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -537,7 +590,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -547,7 +601,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -557,7 +612,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -567,7 +623,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -577,7 +634,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -587,7 +645,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -597,7 +656,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -607,7 +667,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -617,7 +678,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -627,7 +689,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -637,7 +700,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -647,7 +711,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -657,7 +722,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -667,7 +733,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -677,7 +744,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -687,7 +755,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -697,7 +766,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -707,7 +777,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -717,7 +788,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -727,7 +799,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -737,7 +810,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -747,7 +821,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -757,7 +832,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -767,7 +843,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -777,7 +854,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -787,7 +865,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -797,7 +876,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -807,7 +887,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -817,7 +898,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -827,7 +909,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -837,7 +920,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -847,7 +931,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -857,7 +942,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -867,7 +953,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -877,7 +964,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -887,7 +975,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -897,7 +986,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -907,7 +997,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -917,7 +1008,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -927,7 +1019,8 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
   },
   {
     "tipo": "reflexion",
@@ -937,6 +1030,172 @@
     "opcion_1": "",
     "opcion_2": "",
     "opcion_3": "",
-    "correcta": ""
+    "correcta": "",
+    "cita biblica": ""
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "Daniel",
+    "pregunta": "¿Qué hizo Daniel cuando fue llevado a Babilonia?",
+    "respuesta": "Se mantuvo fiel a Dios y no comió alimentos impuros.",
+    "opcion_1": "Construyó un altar a Baal",
+    "opcion_2": "Se convirtió en sacerdote de Marduk",
+    "opcion_3": "Se unió a la guardia del rey",
+    "correcta": "",
+    "cita biblica": "Daniel 1:8"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "Daniel",
+    "pregunta": "¿Cómo fue protegido Daniel en el foso de los leones?",
+    "respuesta": "Dios cerró la boca de los leones para que no lo lastimaran.",
+    "opcion_1": "Los leones estaban dormidos",
+    "opcion_2": "Daniel luchó y venció a los leones",
+    "opcion_3": "Los guardias lo rescataron antes del amanecer",
+    "correcta": "",
+    "cita biblica": "Daniel 6:22"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "Daniel",
+    "pregunta": "¿Qué interpretación dio Daniel al sueño del rey Nabucodonosor?",
+    "respuesta": "Explicó la visión de la estatua con diferentes materiales que representaban reinos.",
+    "opcion_1": "Explicó la historia de Moisés",
+    "opcion_2": "Habló sobre la Torre de Babel",
+    "opcion_3": "Predijo la llegada de Jesús",
+    "correcta": "",
+    "cita biblica": "Daniel 2:31-45"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "Rut",
+    "pregunta": "¿Qué decisión tomó Rut después de la muerte de su esposo?",
+    "respuesta": "Decidió quedarse con su suegra Noemí y adoptar su pueblo y Dios.",
+    "opcion_1": "Se casó con un rey",
+    "opcion_2": "Regresó a su país natal sin Noemí",
+    "opcion_3": "Se hizo sacerdotisa en Israel",
+    "correcta": "",
+    "cita biblica": "Rut 1:16"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "Rut",
+    "pregunta": "¿Quién fue el hombre que rescató a Rut y se casó con ella?",
+    "respuesta": "Booz",
+    "opcion_1": "David",
+    "opcion_2": "Elí",
+    "opcion_3": "Samuel",
+    "correcta": "",
+    "cita biblica": "Rut 4:13"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "Rut",
+    "pregunta": "¿Qué trabajo realizó Rut para sobrevivir?",
+    "respuesta": "Recogía espigas en los campos de Booz.",
+    "opcion_1": "Vendía telas en el mercado",
+    "opcion_2": "Era pastora de ovejas",
+    "opcion_3": "Era tejedora en el templo",
+    "correcta": "",
+    "cita biblica": "Rut 2:2"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "Juan el Bautista",
+    "pregunta": "¿Cuál era la misión principal de Juan el Bautista?",
+    "respuesta": "Preparar el camino para la venida de Jesús.",
+    "opcion_1": "Fundar una iglesia en Jerusalén",
+    "opcion_2": "Ser rey de Israel",
+    "opcion_3": "Escribir los Evangelios",
+    "correcta": "",
+    "cita biblica": "Mateo 3:3"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "Juan el Bautista",
+    "pregunta": "¿Dónde bautizaba Juan a las personas?",
+    "respuesta": "En el río Jordán.",
+    "opcion_1": "En el Mar Muerto",
+    "opcion_2": "En el Templo de Jerusalén",
+    "opcion_3": "En el río Nilo",
+    "correcta": "",
+    "cita biblica": "Marcos 1:5"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "Juan el Bautista",
+    "pregunta": "¿Qué comida solía comer Juan el Bautista?",
+    "respuesta": "Langostas y miel silvestre.",
+    "opcion_1": "Pan y vino",
+    "opcion_2": "Pescado y uvas",
+    "opcion_3": "Manzanas y queso",
+    "correcta": "",
+    "cita biblica": "Mateo 3:4"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "La mujer samaritana",
+    "pregunta": "¿Dónde encontró Jesús a la mujer samaritana?",
+    "respuesta": "En un pozo llamado Sicar.",
+    "opcion_1": "En el templo de Jerusalén",
+    "opcion_2": "En el monte Sinaí",
+    "opcion_3": "En una sinagoga",
+    "correcta": "",
+    "cita biblica": "Juan 4:6"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "La mujer samaritana",
+    "pregunta": "¿Qué le ofreció Jesús a la mujer samaritana?",
+    "respuesta": "Agua viva que da vida eterna.",
+    "opcion_1": "Pan y vino",
+    "opcion_2": "Oro y plata",
+    "opcion_3": "Un lugar para vivir",
+    "correcta": "",
+    "cita biblica": "Juan 4:10"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "La mujer samaritana",
+    "pregunta": "¿Por qué se sorprendió la mujer samaritana al hablar con Jesús?",
+    "respuesta": "Porque él sabía detalles de su vida personal sin que ella se los contara.",
+    "opcion_1": "Porque Jesús hablaba en arameo",
+    "opcion_2": "Porque Jesús era un carpintero",
+    "opcion_3": "Porque Jesús tenía un manto blanco",
+    "correcta": "",
+    "cita biblica": "Juan 4:17-18"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "Noé",
+    "pregunta": "¿Por qué construyó Noé el arca?",
+    "respuesta": "Para salvar a su familia y animales del diluvio enviado por Dios.",
+    "opcion_1": "Para escapar de una guerra",
+    "opcion_2": "Para visitar otra ciudad",
+    "opcion_3": "Para esconderse de un enemigo",
+    "correcta": "",
+    "cita biblica": "Génesis 6:14-17"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "Noé",
+    "pregunta": "¿Cuántos días duró el diluvio?",
+    "respuesta": "40 días y 40 noches.",
+    "opcion_1": "7 días",
+    "opcion_2": "100 días",
+    "opcion_3": "12 días",
+    "correcta": "",
+    "cita biblica": "Génesis 7:12"
+  },
+  {
+    "tipo": "Quiz Comentado",
+    "tema": "Noé",
+    "pregunta": "¿Qué señal dio Dios para prometer que no volvería a inundar la tierra?",
+    "respuesta": "El arco iris.",
+    "opcion_1": "Una paloma blanca",
+    "opcion_2": "Un sol brillante",
+    "opcion_3": "Un terremoto",
+    "correcta": "",
+    "cita biblica": "Génesis 9:13-16"
   }
-]  
+]
