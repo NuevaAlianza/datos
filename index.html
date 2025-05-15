@@ -65,6 +65,9 @@
     font-weight: bold;
     font-size: 1.2rem;
   }
+  .oculto {
+    display: none;
+  }
 </style>
 </head>
 <body>
@@ -228,7 +231,7 @@ function mostrarPregunta() {
 
         // Mostrar botones siguiente y ocultar mostrarRespuestaBtn en quiz_comentado
         siguienteBtn.classList.remove('oculto');
-        mostrarRespuestaBtn.classList.toggle('oculto', tipo === 'quiz_comentado);
+        mostrarRespuestaBtn.classList.toggle('oculto', tipo === 'quiz_comentado');
       };
       opcionesContainer.appendChild(btn);
     });
