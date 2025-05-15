@@ -2,43 +2,47 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>App de Preguntas</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preguntas por Tema</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Preguntas por Tema</h1>
-    
-    <div id="seleccion">
-      <label for="tipoSelect">Selecciona el tipo:</label>
-      <select id="tipoSelect">
-        <option value="">-- Selecciona tipo --</option>
-        <option value="reflexion">Reflexión</option>
-        <option value="quiz">Quiz</option>
-      </select>
 
-      <label for="temaSelect">Selecciona un tema:</label>
-      <select id="temaSelect">
-        <option value="">-- Selecciona tema --</option>
-      </select>
+  <h2 style="text-align: center; color: #5a3e2b;">Selecciona un tema y tipo de pregunta</h2>
 
-      <button id="iniciarBtn" type="button">Iniciar</button>
-    </div>
+  <div id="seleccion" class="fade-in" style="margin-bottom: 2rem;">
+    <label for="tema">Tema:</label>
+    <select id="tema"></select>
 
-    <div id="contenido" class="oculto">
-      <div id="pregunta-container"></div>
-      <div id="opciones-container" class="opciones"></div>
-      <div id="timer" class="barra-tiempo"></div>
-      <div id="respuesta-container" class="oculto"></div>
-      <button id="mostrarRespuestaBtn" class="oculto" type="button">Mostrar Respuesta</button>
-      <button id="siguienteBtn" class="oculto" type="button">Siguiente</button>
-    </div>
+    <label for="tipo">Tipo:</label>
+    <select id="tipo">
+      <option value="reflexion">Reflexión</option>
+      <option value="quiz">Quiz</option>
+    </select>
 
-    <div id="resultado-container" class="oculto"></div>
-    <button id="reiniciarBtn" class="oculto" type="button">Volver al inicio</button>
+    <button id="comenzar">Comenzar</button>
   </div>
 
-  <script src="app.js"></script>
+  <div id="contenido" class="oculto fade-in">
+    <div id="pregunta-container">
+      <h3 id="pregunta-texto"></h3>
+      <div id="opciones-container" style="margin-top: 1rem;"></div>
+    </div>
+    <div id="respuesta-container" class="oculto">
+      <p id="respuesta-texto"></p>
+    </div>
+    <div id="timer"></div>
+    <button id="mostrar-respuesta" class="oculto">Mostrar respuesta</button>
+    <button id="siguiente">Siguiente</button>
+  </div>
+
+  <div id="resultado-container" class="oculto fade-in" style="text-align: center;">
+    <h2 style="color: #5a3e2b;">Resultado</h2>
+    <p id="mensaje-final" style="font-size: 1.2rem; margin-bottom: 1rem;"></p>
+    <button onclick="location.reload()">Reiniciar</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
