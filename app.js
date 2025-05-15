@@ -5,6 +5,12 @@ let puntaje = 0;
 let tipoSeleccionado = '';
 let timerInterval;
 
+// Cargar sonidos
+const sonidoInicio = new Audio('inicio.mp3');
+const sonidoWarning = new Audio('warning.mp3');
+const sonidoFin = new Audio('fin.mp3');
+const sonidoClick = new Audio('click.mp3');
+
 const tipoSelect = document.getElementById('tipoSelect');
 const temaSelect = document.getElementById('temaSelect');
 const iniciarBtn = document.getElementById('iniciarBtn');
@@ -48,6 +54,10 @@ iniciarBtn.addEventListener('click', () => {
   preguntasFiltradas = preguntasFiltradas.sort(() => Math.random() - 0.5);
   indice = 0;
   puntaje = 0;
+
+  // Sonido inicio al comenzar la sesión
+  sonidoInicio.play().catch(() => {});
+
   contenido.classList.remove('oculto');
   resultadoContainer.classList.add('oculto');
   reiniciarBtn.classList.add('oculto');
@@ -78,6 +88,9 @@ function mostrarPregunta() {
       const btn = document.createElement('button');
       btn.textContent = op.text;
       btn.onclick = () => {
+        // Sonido click al seleccionar opción
+        sonidoClick.play().catch(() => {});
+
         if (op.index === actual.correcta) {
           btn.style.background = 'green';
           puntaje++;
@@ -88,6 +101,9 @@ function mostrarPregunta() {
         siguienteBtn.classList.remove('oculto');
         clearInterval(timerInterval);
         timerBar.classList.add('oculto');
+
+        // Sonido fin cuando termina la pregunta en quiz
+        sonidoFin.play().catch(() => {});
       };
       opcionesContainer.appendChild(btn);
     });
@@ -104,8 +120,17 @@ function iniciarTemporizador() {
   timerInterval = setInterval(() => {
     duracion--;
     timerBar.style.width = `${(duracion / 58) * 100}%`;
-    if (duracion <= 20) timerBar.style.background = 'yellow';
-    if (duracion <= 10) timerBar.style.background = 'red';
+
+    if (duracion === 20) {
+      timerBar.style.background = 'yellow';
+      // Sonido warning al cambiar a amarillo
+      sonidoWarning.play().catch(() => {});
+    }
+    if (duracion === 10) {
+      timerBar.style.background = 'red';
+      // Sonido fin cuando queda poco tiempo (rojo)
+      sonidoFin.play().catch(() => {});
+    }
     if (duracion <= 0) {
       clearInterval(timerInterval);
       mostrarRespuestaBtn.classList.remove('oculto');
