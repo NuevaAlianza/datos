@@ -5,6 +5,7 @@ let puntaje = 0;
 let timerInterval;
 
 const temaSelect = document.getElementById('temaSelect');
+const tipoSelect = document.getElementById('tipoSelect');
 const iniciarBtn = document.getElementById('iniciarBtn');
 const contenido = document.getElementById('contenido');
 const preguntaContainer = document.getElementById('pregunta-container');
@@ -33,10 +34,11 @@ fetch('datos.json')
 
 iniciarBtn.addEventListener('click', () => {
   const tema = temaSelect.value;
-  if (!tema) return alert('Por favor selecciona un tema');
-  preguntasFiltradas = preguntas.filter(p => p.tema === tema);
+  const tipo = tipoSelect.value;
+  if (!tema || !tipo) return alert('Selecciona un tema y un tipo');
+  preguntasFiltradas = preguntas.filter(p => p.tema === tema && p.tipo === tipo);
   if (preguntasFiltradas.length === 0) {
-    alert('No hay preguntas para este tema');
+    alert('No hay preguntas para ese tema y tipo.');
     return;
   }
   indice = 0;
@@ -72,7 +74,6 @@ function mostrarPregunta() {
         } else {
           btn.style.background = 'red';
         }
-        // Deshabilitar todos botones para evitar múltiples clicks
         Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
         siguienteBtn.classList.remove('oculto');
         clearInterval(timerInterval);
@@ -80,8 +81,8 @@ function mostrarPregunta() {
       };
       opcionesContainer.appendChild(btn);
     });
+    iniciarTemporizador();
   } else {
-    // Reflexión
     opcionesContainer.classList.add('oculto');
     respuestaContainer.textContent = actual.respuesta;
     mostrarRespuestaBtn.classList.remove('oculto');
