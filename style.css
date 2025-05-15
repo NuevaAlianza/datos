@@ -1,34 +1,39 @@
+/* Fuente y fondo */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 1rem;
-  background: #fff7f0;
-  color: #3e2e2e;
+  font-size: 1.1rem;
+  background: #fffaf3; /* Fondo cálido */
+  color: #333;
   transition: background 0.3s ease;
 }
 
 h2 {
   margin-top: 0;
+  font-size: 1.5rem;
+  color: #5a3e2b;
 }
 
 .oculto {
   display: none;
 }
 
+/* Botones */
 button {
-  padding: 0.6rem 1rem;
-  margin: 0.3rem 0.2rem;
+  padding: 0.8rem 1.2rem;
+  margin: 0.4rem 0.3rem;
   border: none;
-  background-color: #e07a5f;
+  background-color: #e07a5f; /* Terracota */
   color: white;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover:not(:disabled) {
-  background-color: #d65a3b;
+  background-color: #c9644c;
   transform: scale(1.05);
 }
 
@@ -37,7 +42,7 @@ button:active:not(:disabled) {
 }
 
 button:disabled {
-  background-color: #c8bdb3;
+  background-color: #ccc;
   cursor: not-allowed;
   transform: none;
 }
@@ -77,16 +82,17 @@ button:disabled {
   animation: pulse 0.5s ease forwards;
 }
 
-/* Barra temporizador */
+/* Temporizador */
 #timer {
   height: 10px;
   width: 100%;
-  background: #e07a5f;
-  margin: 10px 0;
+  background: #81b29a; /* Verde suave */
+  margin: 12px 0;
   border-radius: 4px;
   transition: width 1s linear, background-color 0.5s ease;
 }
 
+/* Pulsos */
 @keyframes pulseYellow {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
@@ -115,29 +121,37 @@ button:disabled {
 
 /* Contenedores */
 #contenido, #resultado-container, #seleccion {
-  max-width: 600px;
+  max-width: 720px;
   margin: auto;
-  background: #fffdfc;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(150, 100, 50, 0.1);
+  background: #fdf6e3; /* Fondo cálido claro */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 0.1);
 }
 
 /* Opciones */
 #opciones-container button {
   width: 100%;
   text-align: left;
+  font-size: 1.05rem;
+  background-color: #f4a261; /* naranja suave */
+}
+
+#opciones-container button:hover {
+  background-color: #e58e3c;
 }
 
 /* Responsive */
 @media (max-width: 480px) {
   body {
+    font-size: 1rem;
     padding: 0.5rem;
   }
   #contenido, #resultado-container, #seleccion {
-    padding: 1rem;
+    padding: 1.5rem;
   }
   button {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
   }
 }
