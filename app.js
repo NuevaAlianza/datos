@@ -22,10 +22,6 @@ fetch('datos.json')
   .then(res => res.json())
   .then(data => {
     preguntas = data;
-
-    // Vaciar opciones previas si se reinicia
-    temaSelect.innerHTML = '<option value="">-- Selecciona tema --</option>';
-
     const temasUnicos = [...new Set(preguntas.map(p => p.tema))];
     temasUnicos.forEach(t => {
       const opt = document.createElement('option');
@@ -33,15 +29,10 @@ fetch('datos.json')
       opt.textContent = t;
       temaSelect.appendChild(opt);
     });
-
-    // Habilitar el select si estaba deshabilitado
-    temaSelect.disabled = false;
   })
   .catch(err => {
     console.error('Error cargando preguntas:', err);
-    alert('No se pudieron cargar las preguntas.');
   });
-
 
 iniciarBtn.addEventListener('click', () => {
   tipoSeleccionado = tipoSelect.value;
@@ -85,4 +76,96 @@ function mostrarPregunta() {
     opcionesContainer.classList.remove('oculto');
     opciones.forEach((op, i) => {
       const btn = document.createElement('button');
-      btn.textContent =
+      btn.textContent = op.text;
+      btn.onclick = () => {
+        if (op.index === actual.correcta) {
+          btn.style.background = 'green';
+          puntaje++;
+        } else {
+          btn.style.background = 'red';
+        }
+        Array.from(opcionesContainer.children).forEach(b => b.disabled = true);
+        siguienteBtn.classList.remove('oculto');
+        clearInterval(timerInterval);
+        timerBar.classList.add('oculto');
+      };
+      opcionesContainer.appendChild(btn);
+    });
+  } else {
+    opcionesContainer.classList.add('oculto');
+    respuestaContainer.textContent = actual.respuesta;
+    mostrarRespuestaBtn.classList.remove('oculto');
+    iniciarTemporizador();
+  }
+}
+
+function iniciarTemporizador() {
+  let duracion = 58;
+  timerInterval = setInterval(() => {
+    duracion--;
+    timerBar.style.width = `${(duracion / 58) * 100}%`;
+    if (duracion <= 20) timerBar.style.background = 'yellow';
+    if (duracion <= 10) timerBar.style.background = 'red';
+    if (duracion <= 0) {
+      clearInterval(timerInterval);
+      mostrarRespuestaBtn.classList.remove('oculto');
+      siguienteBtn.classList.remove('oculto');
+    }
+  }, 1000);
+}
+
+mostrarRespuestaBtn.addEventListener('click', () => {
+  respuestaContainer.classList.remove('oculto');
+  mostrarRespuestaBtn.classList.add('oculto');
+  siguienteBtn.classList.remove('oculto');
+});
+
+siguienteBtn.addEventListener('click', () => {
+  indice++;
+  if (indice < preguntasFiltradas.length) {
+    mostrarPregunta();
+  } else {
+    mostrarResultado();
+  }
+});
+
+reiniciarBtn.addEventListener('click', () => {
+  document.getElementById('seleccion').classList.remove('oculto');
+  contenido.classList.add('oculto');
+  resultadoContainer.classList.add('oculto');
+  reiniciarBtn.classList.add('oculto');
+});
+
+function mostrarResultado() {
+  contenido.classList.add('oculto');
+  resultadoContainer.classList.remove('oculto');
+  reiniciarBtn.classList.remove('oculto');
+
+  if (tipoSeleccionado === 'quiz') {
+    const porcentaje = (puntaje / preguntasFiltradas.length) * 100;
+    let mensaje = '';
+
+    if (porcentaje <= 75) {
+      mensaje = 'Sigamos creciendo juntos. Compartiendo más en comunidad, seremos mejores.';
+    } else if (porcentaje <= 87) {
+      mensaje = '¡Estás encaminado! Tu conocimiento es bueno y puede inspirar a otros.';
+    } else {
+      mensaje = '¡Eres un iluminado de la Palabra! Sigue brillando y guiando con sabiduría.';
+    }
+
+    resultadoContainer.innerHTML = `
+      <h2>Completado</h2>
+      <p>Puntaje: ${puntaje} / ${preguntasFiltradas.length} (${porcentaje.toFixed(1)}%)</p>
+      <p><strong>${mensaje}</strong></p>
+    `;
+  } else {
+    const frasesReflexion = [
+      'Gracias por dedicar tiempo a reflexionar.',
+      'Tu búsqueda te transforma.',
+      'El corazón que reflexiona es tierra fértil.',
+      '¡Sigue profundizando! Dios habla al alma atenta.'
+    ];
+    const aleatoria = frasesReflexion[Math.floor(Math.random() * frasesReflexion.length)];
+    resultadoContainer.innerHTML = `<h2>Gracias por Reflexionar</h2><p>${aleatoria}</p>`;
+  }
+}
