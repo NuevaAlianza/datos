@@ -2,8 +2,8 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 1rem;
-  background: #eef2f7;
-  color: #333;
+  background: #fff7f0;
+  color: #3e2e2e;
   transition: background 0.3s ease;
 }
 
@@ -19,7 +19,7 @@ button {
   padding: 0.6rem 1rem;
   margin: 0.3rem 0.2rem;
   border: none;
-  background-color: #1976d2;
+  background-color: #e07a5f;
   color: white;
   cursor: pointer;
   border-radius: 5px;
@@ -28,7 +28,7 @@ button {
 }
 
 button:hover:not(:disabled) {
-  background-color: #115293;
+  background-color: #d65a3b;
   transform: scale(1.05);
 }
 
@@ -37,7 +37,7 @@ button:active:not(:disabled) {
 }
 
 button:disabled {
-  background-color: #999;
+  background-color: #c8bdb3;
   cursor: not-allowed;
   transform: none;
 }
@@ -58,7 +58,6 @@ button:disabled {
   animation: fadeInScale 0.5s ease forwards;
 }
 
-/* Shake para respuesta incorrecta */
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   20%, 60% { transform: translateX(-8px); }
@@ -69,7 +68,6 @@ button:disabled {
   animation: shake 0.4s ease;
 }
 
-/* Pulse para respuesta correcta */
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
@@ -83,13 +81,12 @@ button:disabled {
 #timer {
   height: 10px;
   width: 100%;
-  background: green;
+  background: #e07a5f;
   margin: 10px 0;
   border-radius: 4px;
   transition: width 1s linear, background-color 0.5s ease;
 }
 
-/* Efectos pulsantes */
 @keyframes pulseYellow {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
@@ -120,10 +117,10 @@ button:disabled {
 #contenido, #resultado-container, #seleccion {
   max-width: 600px;
   margin: auto;
-  background: white;
+  background: #fffdfc;
   padding: 1rem 2rem;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgb(0 0 0 / 0.1);
+  box-shadow: 0 5px 15px rgba(150, 100, 50, 0.1);
 }
 
 /* Opciones */
