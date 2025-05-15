@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>App de Preguntas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Preguntas por Tema</h1>
+    <div id="seleccion">
+      <label for="tema">Selecciona un tema:</label>
+      <select id="temaSelect"></select>
+      <button id="iniciarBtn">Iniciar</button>
+    </div>
+
+    <div id="contenido" class="oculto">
+      <div id="pregunta-container"></div>
+      <div id="opciones-container" class="opciones"></div>
+      <div id="timer" class="barra-tiempo"></div>
+      <div id="respuesta-container" class="oculto"></div>
+      <button id="mostrarRespuestaBtn" class="oculto">Mostrar Respuesta</button>
+      <button id="siguienteBtn" class="oculto">Siguiente</button>
+    </div>
+
+    <div id="resultado-container" class="oculto"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

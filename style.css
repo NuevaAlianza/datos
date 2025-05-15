@@ -1,0 +1,44 @@
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  background: #f4f4f4;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.hidden {
+  display: none;
+}
+#barra-container {
+  width: 100%;
+  background: #ccc;
+  height: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#barra {
+  height: 100%;
+  width: 100%;
+  background: green;
+  transition: width 1s linear;
+}
+button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}
